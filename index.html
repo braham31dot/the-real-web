@@ -5,46 +5,221 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tutoring English Language</title>
     <style>
-        /* ... (All your existing CSS styles) ... */
+        /* General Styles */
+body {
+    font-family: 'Playfair Display', serif; /* Classic serif font */
+    margin: 0;
+    background-color: #111; /* Dark background */
+    color: #eee; /* Light text */
+    line-height: 1.7;
+}
 
-        .pricing-note { /* Moved inside the <style> tag */
-            background-color: #f0f0f0;
-            padding: 20px;
-            margin-top: 20px;
-            border-radius: 8px;
-            font-size: 16px;
-            line-height: 1.5;
-        }
+a {
+    text-decoration: none;
+    color: #b8860b; /* Gold links */
+    transition: color 0.3s ease, transform 0.2s ease;
+}
 
-        .pricing-note strong {
-            font-weight: bold;
-        }
+a:hover {
+    color: #daa520; /* Brighter gold on hover */
+    transform: scale(1.02);
+}
 
-        .pricing-note ul {
-            list-style-type: disc;
-            padding-left: 20px;
-        }
+h1, h2, h3 {
+    font-weight: 700;
+    color: #fff;
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.1);
+}
 
-        .course-topics {
-            list-style-type: none;
-            padding: 0;
-        }
+/* Header */
+header {
+    background-color: rgba(17, 17, 17, 0.9); /* Semi-transparent dark header */
+    padding: 20px;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
 
-        .course-topics li {
-            margin-bottom: 10px;
-        }
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
 
-        .course-topics strong {
-            font-weight: bold;
-        }
+nav li {
+    margin: 0 20px; /* Increased spacing */
+}
+
+/* Sections */
+section {
+    padding: 60px; /* Increased padding */
+}
+
+#home {
+    text-align: center;
+    background-image: url("images/saved_pictures.jpg"); /* Correct path! */
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+    padding: 120px 0; /* Increased padding */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 60vh; /* Ensure minimum height */
+}
+
+#home::before { /* Dark overlay */
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+#home h2 {
+    font-size: 3rem;
+    margin-bottom: 30px;
+    position: relative;
+    z-index: 1;
+}
+
+#home p {
+    font-size: 1.4rem;
+    max-width: 900px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+}
+
+/* Services Section */
+#services ul {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Adjusted minmax */
+    gap: 30px;
+}
+
+#services li {
+    background-color: rgba(20, 20, 20, 0.8);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+#services li:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+}
+
+/* Testimonials */
+#testimonials {
+    background-color: rgba(17, 17, 17, 0.9);
+}
+
+#testimonials blockquote {
+    margin: 30px 0;
+    padding: 30px;
+    border-left: 8px solid #4169e1; /* Royal blue border */
+    font-style: italic;
+    background-color: rgba(20, 20, 20, 0.7);
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+/* Pricing Note */
+.pricing-note {
+    background-color: rgba(30, 30, 30, 0.8);
+    padding: 30px;
+    margin-top: 30px;
+    border-radius: 15px;
+    font-size: 1.2rem; /* Increased font size */
+    line-height: 1.6;
+    color: #ddd;
+}
+
+.pricing-note strong {
+    font-weight: bold;
+    color: #fff;
+}
+
+.pricing-note ul {
+    list-style-type: disc;
+    padding-left: 25px;
+}
+
+/* Course Topics */
+.course-topics {
+    list-style-type: none;
+    padding: 0;
+}
+
+.course-topics li {
+    margin-bottom: 15px;
+}
+
+.course-topics strong {
+    font-weight: bold;
+    color: #fff;
+}
+
+/* Footer */
+footer {
+    background-color: rgba(17, 17, 17, 0.9);
+    padding: 20px;
+    text-align: center;
+}
+
+/* Button Style */
+button, /* Target buttons */
+input[type="submit"] { /* and submit inputs */
+    background-color: #4169e1; /* Royal blue */
+    color: #fff;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 8px;
+    font-family: 'Playfair Display', serif; /* Match body font */
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+button:hover,
+input[type="submit"]:hover {
+    background-color: #3355b3; /* Darker royal blue */
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
     </style>
 </head>
 <body>
     <header>
         </header>
 
+    <section id="home">
+        <h2>Bienvenue sur notre site de tutorat</h2>
+        <p>Nous offrons des cours d'anglais personnalisés pour les adultes à un prix abordable. Que ce soit en tête-à-tête ou en classe, nous sommes là pour vous aider à améliorer vos compétences linguistiques.</p>
+    </section>
+
     <section id="contact">
-        </section>
+        <h2>Contactez-nous</h2>
+
+        <div id="contact-info">
+            <p>Email: <a href="mailto:englishtutormontreal31@gmail.com">englishtutormontreal31@gmail.com</a></p>
+            <p>WhatsApp: <a href="https://wa.me/14385232106" target="_blank" rel="noopener noreferrer">+1 438-523-2106</a></p>
+        </div>
+
+            </form>
+        </div>
+    </section>
 
     <section id="services">
         <h2>Nos Services</h2>
@@ -145,41 +320,37 @@
                     <li>Prise de parole en public</li>
                 </ul>
             </li>
+            <li><strong>10. Structures de phrases avancées:</strong>
+                <ul>
+                    <li>Subordonnées</li>
+                    <li>Phrases complexes</li>
+                    <li>Et plus</li>
+                </ul>
+            </li>
+            <li><strong>11. Préparation aux examens (si nécessaire):</strong>
+                <ul>
+                    <li>TOEFL, IELTS, Cambridge</li>
+                    <li>Conseils pour les examens</li>
+                    <li>Tests et exercices pratiques</li>
+                    <li>Améliorer la vitesse et la précision</li>
+                </ul>
+            </li>
+            <li><strong>12. Compréhension culturelle et anglais courant:</strong>
+                <ul>
+                    <li>Expressions culturelles courantes et argot</li>
+                    <li>Humour et blagues en anglais</li>
+                    <li>Normes sociales dans les pays anglophones</li>
+                </ul>
+            </li>
+            <li><strong>13. Plans de révision et de pratique:</strong>
+                <ul>
+                    <li>Séances de révision hebdomadaires et mensuelles</li>
+                    <li>Livres, applications et ressources recommandés</li>
+                    <li>Création d'un plan d'étude personnalisé pour chaque étudiant</li>
+                </ul>
+            </li>
         </ol>
     </section>
-
-    <ul class="course-topics">
-        <li><strong>10. Structures de phrases avancées:</strong>
-            <ul>
-                <li>Subordonnées</li>
-                <li>Phrases complexes</li>
-                <li>Et plus</li>
-            </ul>
-        </li>
-        <li><strong>11. Préparation aux examens (si nécessaire):</strong>
-            <ul>
-                <li>TOEFL, IELTS, Cambridge</li>
-                <li>Conseils pour les examens</li>
-                <li>Tests et exercices pratiques</li>
-                <li>Améliorer la vitesse et la précision</li>
-            </ul>
-        </li>
-        <li><strong>12. Compréhension culturelle et anglais courant:</strong>
-            <ul>
-                <li>Expressions culturelles courantes et argot</li>
-                <li>Humour et blagues en anglais</li>
-                <li>Normes sociales dans les pays anglophones</li>
-            </ul>
-        </li>
-        <li><strong>13. Plans de révision et de pratique:</strong>
-            <ul>
-                <li>Séances de révision hebdomadaires et mensuelles</li>
-                <li>Livres, applications et ressources recommandés</li>
-                <li>Création d'un plan d'étude personnalisé pour chaque étudiant</li>
-            </ul>
-        </li>
-    </ul>
-
 
     <footer>
         <p>&copy; 2025 Tutoring English Language. Tous droits réservés.</p>
