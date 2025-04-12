@@ -2,6 +2,11 @@
 <html lang="en" class="scroll-smooth">
 
 <head>
+<meta name="description" content="EnglishMontreal101 offers private tutoring, placement quizzes, and daily English learning tools for all levels.">
+<meta property="og:title" content="EnglishMontreal101 - English Placement & Lessons">
+<meta property="og:description" content="Interactive English lessons, placement test, multilingual support, and more. Start learning today!">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>EnglishMontreal101 - English Placement & Lessons</title>
@@ -31,56 +36,162 @@
     <main class="p-4 md:p-6 max-w-3xl mx-auto">
    
 <section class="tutoring-summary">
-  <h2>EN/FR - Private English Tutoring Guide Summary</h2>
-  <ul>
-    <li><strong>Introduction & learning goals</strong> / Introduction & objectifs d'apprentissage</li>
-    <li><strong>English basics:</strong> alphabet, greetings, simple sentences / Bases de l'anglais : alphabet, salutations, phrases simples</li>
-    <li><strong>Grammar:</strong> nouns, verbs, adjectives, sentence structure / Grammaire : noms, verbes, adjectifs, structure des phrases</li>
-    <li><strong>Speaking & pronunciation:</strong> phonetics, roleplays / Expression orale & prononciation : phonétique, jeux de rôle</li>
-    <li><strong>Vocabulary building:</strong> daily topics, idioms / Vocabulaire : vie quotidienne, expressions idiomatiques</li>
-    <li><strong>Writing:</strong> emails, essays, creative texts / Écriture : e-mails, essais, rédaction créative</li>
-    <li><strong>Reading:</strong> comprehension strategies, summaries / Lecture : stratégies de compréhension, résumés</li>
-    <li><strong>Listening:</strong> audio practice, accents / Écoute : audios, reconnaissance des accents</li>
-    <li><strong>Advanced communication & fluency</strong> / Communication avancée & fluidité</li>
-    <li><strong>Exam prep, culture, review plans</strong> / Préparation aux examens, culture, plans de révision</li>
-  </ul>
+  <!-- Our Services Button -->
+  <button class="cta-button" id="servicesButton">Our Services</button>
+
+  <!-- Modal (Pop-up Box) -->
+  <div class="modal" id="servicesModal">
+    <div class="modal-content">
+      <span class="close" id="closeModal">&times;</span>
+      <h2>EN/FR - Private English Tutoring Guide Summary</h2>
+      <ul>
+        <li><strong>Introduction & learning goals</strong> / Introduction & objectifs d'apprentissage</li>
+        <li><strong>English basics:</strong> alphabet, greetings, simple sentences / Bases de l'anglais : alphabet, salutations, phrases simples</li>
+        <li><strong>Grammar:</strong> nouns, verbs, adjectives, sentence structure / Grammaire : noms, verbes, adjectifs, structure des phrases</li>
+        <li><strong>Speaking & pronunciation:</strong> phonetics, roleplays / Expression orale & prononciation : phonétique, jeux de rôle</li>
+        <li><strong>Vocabulary building:</strong> daily topics, idioms / Vocabulaire : vie quotidienne, expressions idiomatiques</li>
+        <li><strong>Writing:</strong> emails, essays, creative texts / Écriture : e-mails, essais, rédaction créative</li>
+        <li><strong>Reading:</strong> comprehension strategies, summaries / Lecture : stratégies de compréhension, résumés</li>
+        <li><strong>Listening:</strong> audio practice, accents / Écoute : audios, reconnaissance des accents</li>
+        <li><strong>Advanced communication & fluency</strong> / Communication avancée & fluidité</li>
+        <li><strong>Exam prep, culture, review plans</strong> / Préparation aux examens, culture, plans de révision</li>
+      </ul>
+    </div>
+  </div>
 </section>
-  
+
+<script>
+  // Get elements
+  const servicesButton = document.getElementById('servicesButton');
+  const servicesModal = document.getElementById('servicesModal');
+  const closeModal = document.getElementById('closeModal');
+
+  // Open the modal when the button is clicked
+  servicesButton.addEventListener('click', function() {
+    servicesModal.style.display = "block";
+  });
+
+  // Close the modal when the user clicks the "x"
+  closeModal.addEventListener('click', function() {
+    servicesModal.style.display = "none";
+  });
+
+  // Close the modal if the user clicks outside the modal content
+  window.addEventListener('click', function(event) {
+    if (event.target === servicesModal) {
+      servicesModal.style.display = "none";
+    }
+  });
+</script>
+
 <style>
-.tutoring-summary {
-  background-color: #fdfdfd;
-  border: 1px solid #ddd;
-  border-radius: 12px;
-  padding: 1.5rem;
-  margin: 2rem auto;
-  max-width: 800px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
-  font-family: 'Segoe UI', sans-serif;
-}
+  /* General styling for the tutoring summary */
+  .cta-button {
+    display: inline-block;
+    padding: 0.8rem 2rem;
+    background-color: #ff88a0;
+    color: white;
+    border: none;
+    border-radius: 30px;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    cursor: pointer;
+    font-family: 'Segoe UI', sans-serif;
+    transition: all 0.3s ease;
+  }
 
-.tutoring-summary h2 {
-  font-size: 1.5rem;
-  margin-bottom: 1rem;
-  text-align: center;
-  color: #2a2a2a;
-}
+  .cta-button:hover {
+    background-color: #f16a6a;
+    transform: scale(1.05);
+  }
 
-.tutoring-summary ul {
-  list-style-type: square;
-  padding-left: 1.5rem;
-  color: #333;
-}
+  .cta-button:active {
+    background-color: #d24c5a;
+  }
 
-.tutoring-summary ul li {
-  margin-bottom: 0.75rem;
-  line-height: 1.6;
-}
+  .cta-button:focus {
+    outline: none;
+  }
 
+  /* The Modal (background) */
+  .modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.4); /* Black with opacity */
+    overflow: auto;
+    padding-top: 60px;
+  }
+
+  /* Modal Content */
+  .modal-content {
+    background-color: #fffcf9;
+    margin: 5% auto;
+    padding: 2rem;
+    border: 1px solid #f0c8b3;
+    border-radius: 15px;
+    width: 80%;
+    max-width: 800px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  }
+
+  /* Close button */
+  .close {
+    color: #aaa;
+    font-size: 2rem;
+    font-weight: bold;
+    float: right;
+    cursor: pointer;
+  }
+
+  .close:hover,
+  .close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  /* Modal text and list styling */
+  .modal-content h2 {
+    font-size: 1.7rem;
+    margin-bottom: 1rem;
+    text-align: center;
+    color: #f16a6a;
+    font-weight: bold;
+    font-family: 'Comic Sans MS', cursive;
+  }
+
+  .modal-content ul {
+    list-style-type: square;
+    padding-left: 2rem;
+    color: #3a3a3a;
+  }
+
+  .modal-content ul li {
+    margin-bottom: 1rem;
+    line-height: 1.7;
+    font-family: 'Comic Sans MS', cursive;
+  }
+
+  /* Mobile responsiveness */
+  @media (max-width: 600px) {
+    .modal-content {
+      width: 90%;
+      padding: 1.5rem;
+    }
+
+    .cta-button {
+      padding: 0.6rem 1.5rem;
+      font-size: 1rem;
+    }
+  }
 </style>
+    </section>
 
-
-      
-       
         <section id="daily-word" class="mb-8 bg-white dark:bg-gray-800 p-4 rounded-lg shadow-md hover:scale-105 transition-all duration-500 ease-in-out">
             <h2 class="text-xl font-semibold mb-2" data-i18n="word-of-day">📖 Word of the Day</h2>
             <p id="word" class="text-lg font-bold text-blue-600 dark:text-blue-300"></p>
@@ -209,31 +320,37 @@
         document.getElementById('lang-es').onclick = () => setLanguage('es');
         document.getElementById('lang-ar').onclick = () => setLanguage('ar');
 
-        // Theme Toggle
-        const themeToggle = document.getElementById('theme-toggle');
+// Theme Toggle
+const themeToggle = document.getElementById('theme-toggle');
 
-        function setTheme(theme) {
-            if (theme === 'dark') {
-                document.documentElement.classList.add('dark');
-                localStorage.theme = 'dark';
-                themeToggle.textContent = '☀️';
-            } else {
-                document.documentElement.classList.remove('dark');
-                localStorage.theme = 'light';
-                themeToggle.textContent = '🌙';
-            }
-        }
+function setTheme(theme) {
+    if (theme === 'dark') {
+        document.documentElement.classList.add('dark');
+        localStorage.theme = 'dark';
+        themeToggle.textContent = '☀️'; // Light mode icon
+    } else {
+        document.documentElement.classList.remove('dark');
+        localStorage.theme = 'light';
+        themeToggle.textContent = '🌙'; // Dark mode icon
+    }
+}
 
-        if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-            setTheme('dark');
-        } else {
-            setTheme('light');
-        }
+// Initialize theme on page load
+if (
+    localStorage.theme === 'dark' ||
+    (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)
+) {
+    setTheme('dark');
+} else {
+    setTheme('light');
+}
 
-        themeToggle.addEventListener('click', function () {
-            const currentTheme = localStorage.theme;
-            setTheme(currentTheme === 'dark' ? 'light' : 'dark');
-        });
+// Toggle theme on click
+themeToggle.addEventListener('click', () => {
+    const newTheme = localStorage.theme === 'dark' ? 'light' : 'dark';
+    setTheme(newTheme);
+});
+
 
         const words = [
             { word: 'Break the ice', definition: 'To initiate conversation in a social setting.' },
