@@ -1,374 +1,301 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en" class="scroll-smooth">
+
 <head>
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8444569267871834"
-     crossorigin="anonymous"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tutoring English Language</title>
-    <style>
-        /* General Styles */
-body {
-    font-family: 'Playfair Display', serif; /* Classic serif font */
-    margin: 0;
-    background-color: #111; /* Dark background */
-    color: #eee; /* Light text */
-    line-height: 1.7;
-}
-
-a {
-    text-decoration: none;
-    color: #b8860b; /* Gold links */
-    transition: color 0.3s ease, transform 0.2s ease;
-}
-
-a:hover {
-    color: #daa520; /* Brighter gold on hover */
-    transform: scale(1.02);
-}
-
-h1, h2, h3 {
-    font-weight: 700;
-    color: #fff;
-    text-shadow: 0 0 5px rgba(255, 255, 255, 0.1);
-}
-
-/* Header */
-header {
-    background-color: rgba(17, 17, 17, 0.9); /* Semi-transparent dark header */
-    padding: 20px;
-    position: sticky;
-    top: 0;
-    z-index: 10;
-}
-
-nav ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    justify-content: center;
-}
-
-nav li {
-    margin: 0 20px; /* Increased spacing */
-}
-
-/* Sections */
-section {
-    padding: 60px; /* Increased padding */
-}
-
-#home {
-    text-align: center;
-    background-image: url("images/saved_pictures.jpg"); /* Correct path! */
-    background-size: cover;
-    background-position: center;
-    color: #fff;
-    padding: 120px 0; /* Increased padding */
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    min-height: 60vh; /* Ensure minimum height */
-}
-
-#home::before { /* Dark overlay */
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-}
-
-#home h2 {
-    font-size: 3rem;
-    margin-bottom: 30px;
-    position: relative;
-    z-index: 1;
-}
-
-#home p {
-    font-size: 1.4rem;
-    max-width: 900px;
-    margin: 0 auto;
-    position: relative;
-    z-index: 1;
-}
-
-/* Services Section */
-#services ul {
-    list-style: none;
-    padding: 0;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Adjusted minmax */
-    gap: 30px;
-}
-
-#services li {
-    background-color: rgba(20, 20, 20, 0.8);
-    padding: 30px;
-    border-radius: 15px;
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-#services li:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
-}
-
-/* Testimonials */
-#testimonials {
-    background-color: rgba(17, 17, 17, 0.9);
-}
-
-#testimonials blockquote {
-    margin: 30px 0;
-    padding: 30px;
-    border-left: 8px solid #4169e1; /* Royal blue border */
-    font-style: italic;
-    background-color: rgba(20, 20, 20, 0.7);
-    border-radius: 15px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
-}
-
-/* Pricing Note */
-.pricing-note {
-    background-color: rgba(30, 30, 30, 0.8);
-    padding: 30px;
-    margin-top: 30px;
-    border-radius: 15px;
-    font-size: 1.2rem; /* Increased font size */
-    line-height: 1.6;
-    color: #ddd;
-}
-
-.pricing-note strong {
-    font-weight: bold;
-    color: #fff;
-}
-
-.pricing-note ul {
-    list-style-type: disc;
-    padding-left: 25px;
-}
-
-/* Course Topics */
-.course-topics {
-    list-style-type: none;
-    padding: 0;
-}
-
-.course-topics li {
-    margin-bottom: 15px;
-}
-
-.course-topics strong {
-    font-weight: bold;
-    color: #fff;
-}
-
-/* Footer */
-footer {
-    background-color: rgba(17, 17, 17, 0.9);
-    padding: 20px;
-    text-align: center;
-}
-
-/* Button Style */
-button, /* Target buttons */
-input[type="submit"] { /* and submit inputs */
-    background-color: #4169e1; /* Royal blue */
-    color: #fff;
-    padding: 15px 30px;
-    border: none;
-    border-radius: 8px;
-    font-family: 'Playfair Display', serif; /* Match body font */
-    font-size: 1.1rem;
-    font-weight: 600;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-button:hover,
-input[type="submit"]:hover {
-    background-color: #3355b3; /* Darker royal blue */
-    transform: translateY(-2px);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
-}
-    </style>
+    <title>EnglishMontreal101 - English Placement & Lessons</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark');
+        } else {
+            document.documentElement.classList.remove('dark');
+        }
+    </script>
 </head>
-<body>
-    <header>
-        </header>
 
-    <section id="home">
-        <h2>Bienvenue sur notre site de tutorat</h2>
-        <p>Nous offrons des cours d'anglais personnalisés pour les adultes à un prix abordable. Que ce soit en tête-à-tête ou en classe, nous sommes là pour vous aider à améliorer vos compétences linguistiques.</p>
-        <div>
-            <ins class="adsbygoogle"
-                 style="display:block"
-                 data-ad-client="ca-pub-8444569267871834"
-                 data-ad-slot="2525478608"
-                 data-ad-format="auto"
-                 data-full-width-responsive="true"></ins>
-            <script>
-                 (adsbygoogle = window.adsbygoogle || []).push({});
-            </script>
+<body class="bg-gradient-to-br from-purple-200 via-pink-100 to-blue-200 dark:from-gray-900 dark:via-gray-800 dark:to-black text-gray-900 dark:text-gray-100 font-sans">
+    <header class="p-6 bg-gradient-to-r from-pink-500 via-purple-500 to-blue-500 dark:from-gray-800 dark:via-gray-700 dark:to-gray-900 flex justify-between items-center shadow-lg">
+        <h1 class="text-3xl font-extrabold tracking-tight">🌐 EnglishMontreal101</h1>
+        <div class="flex gap-2">
+            <button id="lang-en" class="bg-white dark:bg-gray-700 text-gray-900 dark:text-white text-sm px-2 py-1 rounded">EN</button>
+            <button id="lang-fr" class="bg-white dark:bg-gray-700 text-gray-900 dark:text-white text-sm px-2 py-1 rounded">FR</button>
+            <button id="lang-es" class="bg-white dark:bg-gray-700 text-gray-900 dark:text-white text-sm px-2 py-1 rounded">ES</button>
+            <button id="lang-ar" class="bg-white dark:bg-gray-700 text-gray-900 dark:text-white text-sm px-2 py-1 rounded">AR</button>
+            <button id="theme-toggle" class="bg-white dark:bg-gray-700 text-sm text-gray-900 dark:text-white px-2 py-1 rounded shadow hover:scale-105 transition">🌙</button>
         </div>
-    </section>
+    </header>
 
-    <section id="contact">
-        <h2>Contactez-nous</h2>
+    <main class="p-4 md:p-6 max-w-3xl mx-auto">
+   
+<section class="tutoring-summary">
+  <h2>EN/FR - Private English Tutoring Guide Summary</h2>
+  <ul>
+    <li><strong>Introduction & learning goals</strong> / Introduction & objectifs d'apprentissage</li>
+    <li><strong>English basics:</strong> alphabet, greetings, simple sentences / Bases de l'anglais : alphabet, salutations, phrases simples</li>
+    <li><strong>Grammar:</strong> nouns, verbs, adjectives, sentence structure / Grammaire : noms, verbes, adjectifs, structure des phrases</li>
+    <li><strong>Speaking & pronunciation:</strong> phonetics, roleplays / Expression orale & prononciation : phonétique, jeux de rôle</li>
+    <li><strong>Vocabulary building:</strong> daily topics, idioms / Vocabulaire : vie quotidienne, expressions idiomatiques</li>
+    <li><strong>Writing:</strong> emails, essays, creative texts / Écriture : e-mails, essais, rédaction créative</li>
+    <li><strong>Reading:</strong> comprehension strategies, summaries / Lecture : stratégies de compréhension, résumés</li>
+    <li><strong>Listening:</strong> audio practice, accents / Écoute : audios, reconnaissance des accents</li>
+    <li><strong>Advanced communication & fluency</strong> / Communication avancée & fluidité</li>
+    <li><strong>Exam prep, culture, review plans</strong> / Préparation aux examens, culture, plans de révision</li>
+  </ul>
+</section>
+  
+<style>
+.tutoring-summary {
+  background-color: #fdfdfd;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin: 2rem auto;
+  max-width: 800px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  font-family: 'Segoe UI', sans-serif;
+}
 
-        <div id="contact-info">
-            <p>Email: <a href="mailto:englishtutormontreal31@gmail.com">englishtutormontreal31@gmail.com</a></p>
-            <p>WhatsApp: <a href="https://wa.me/14385232106" target="_blank" rel="noopener noreferrer">+1 438-523-2106</a></p>
-        </div>
+.tutoring-summary h2 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  text-align: center;
+  color: #2a2a2a;
+}
 
+.tutoring-summary ul {
+  list-style-type: square;
+  padding-left: 1.5rem;
+  color: #333;
+}
+
+.tutoring-summary ul li {
+  margin-bottom: 0.75rem;
+  line-height: 1.6;
+}
+
+</style>
+
+
+      
+       
+        <section id="daily-word" class="mb-8 bg-white dark:bg-gray-800 p-4 rounded-lg shadow-md hover:scale-105 transition-all duration-500 ease-in-out">
+            <h2 class="text-xl font-semibold mb-2" data-i18n="word-of-day">📖 Word of the Day</h2>
+            <p id="word" class="text-lg font-bold text-blue-600 dark:text-blue-300"></p>
+            <p id="definition" class="text-sm italic text-gray-600 dark:text-gray-400"></p>
+        </section>
+
+        <section id="placement-quiz" class="mb-12 bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md hover:scale-105 transition-all duration-500 ease-in-out">
+            <h2 class="text-2xl font-bold mb-4">🧠 Proficiency Quiz</h2>
+            <form id="quiz-form" class="space-y-4">
+                <div>
+                    <p>1. Choose the correct sentence:</p>
+                    <label class="block"><input type="radio" name="q1" value="a"> She go to school.</label>
+                    <label class="block"><input type="radio" name="q1" value="b"> She goes to school.</label>
+                </div>
+                <div>
+                    <p>2. What is the past tense of 'eat'?</p>
+                    <label class="block"><input type="radio" name="q2" value="a"> eated</label>
+                    <label class="block"><input type="radio" name="q2" value="b"> ate</label>
+                </div>
+                <div>
+                    <p>3. Which is a question?</p>
+                    <label class="block"><input type="radio" name="q3" value="a"> She is tired.</label>
+                    <label class="block"><input type="radio" name="q3" value="b"> Is she tired?</label>
+                </div>
+                <button type="submit" class="bg-gradient-to-r from-indigo-500 to-purple-500 text-white px-4 py-2 rounded hover:scale-105 transition">Submit</button>
             </form>
-        </div>
-    </section>
+            <div id="quiz-result" class="mt-4 text-xl font-bold text-pink-600 dark:text-pink-300"></div>
+        </section>
 
-    <section id="services">
-        <h2>Nos Services</h2>
-        <ul>
-            <li>Cours particuliers 1 à 1</li>
-            <li>Cours en groupe</li>
-        </ul>
+        <section class="mb-12">
+            <h2 class="text-2xl font-bold mb-4" data-i18n="testimonials">✨ What Our Students Say</h2>
+            <div class="space-y-4">
+                <blockquote class="bg-purple-100 dark:bg-purple-900 p-4 rounded shadow hover:scale-105 transition-all duration-500 ease-in-out" data-i18n="review1">
+                    "I improved so fast! The lessons were fun and easy to understand."
+                    <footer class="text-right mt-2 font-light">— Sara M.</footer>
+                </blockquote>
+                <blockquote class="bg-blue-100 dark:bg-blue-900 p-4 rounded shadow hover:scale-105 transition-all duration-500 ease-in-out" data-i18n="review2">
+                    "The placement test helped me know exactly where to start. Highly recommend!"
+                    <footer class="text-right mt-2 font-light">— Ali R.</footer>
+                </blockquote>
+            </div>
+        </section>
 
-        <div class="pricing-note">
-            <p><strong>Note importante:</strong></p>
-            <p>Les cours (publics) sont à 40$ par semaine pour 4h de cours (dimanche de 17h à 19h et jeudi de 17h à 19h) pour les débutants. La 1ère saison commence en fin 2025  !</p>
-            <p>Veuillez noter que les cours 1 à 1 fonctionnent différemment des cours publics. Nous offrons un plan spécialisé pour chaque étudiant afin de répondre à leurs demandes.</p>
-            <p>Les deux seules dates non disponibles pour les cours privés sont (dimanche, vendredi et jeudi).</p>
-        </div>
-    </section>
+        <section class="mb-12">
+            <h2 class="text-2xl font-bold mb-4" data-i18n="contact-us">📬 Contact Us</h2>
+            <p class="mb-2">Email: <a href="mailto:englishtutormontreal31@gmail.com" class="text-blue-600 dark:text-blue-300 underline">englishtutormontreal31@gmail.com</a></p>
+            <form id="contact-form" class="space-y-4">
+                <input type="text" name="name" placeholder="Your Name" class="w-full p-3 rounded border dark:border-gray-700 bg-white dark:bg-gray-800" required>
+                <input type="email" name="email" placeholder="Your Email" class="w-full p-3 rounded border dark:border-gray-700 bg-white dark:bg-gray-800" required>
+                <textarea name="message" rows="4" placeholder="Your Message" class="w-full p-3 rounded border dark:border-gray-700 bg-white dark:bg-gray-800" required></textarea>
+                <button type="submit" class="bg-gradient-to-r from-green-400 to-emerald-500 text-white px-4 py-2 rounded hover:scale-105 transition">Send Message</button>
+                <p id="form-msg" class="text-green-600 mt-2 hidden">✅ Thank you! We will get back to you as soon as possible. 😊</p>
+            </form>
+        </section>
 
-    <section id="testimonials">
-        <h2>Témoignages</h2>
-        <blockquote><p>"Les cours sont très efficaces et le professeur est vraiment patient!" - Marie</p></blockquote>
-        <blockquote><p>"Je me sens beaucoup plus confiant en parlant anglais grâce à ces cours." - yacine</p></blockquote>
-    </section>
+        <section class="mb-12 text-sm bg-white dark:bg-gray-800 p-4 rounded-lg">
+            <h2 class="text-xl font-semibold mb-2" data-i18n="privacy">🔐 Privacy Policy</h2>
+            <p class="leading-relaxed" data-i18n="privacy-text">
+                We value your privacy. Any data submitted through forms is only used to contact you about your lesson inquiries and is never shared with third parties. Cookies are used only to enhance your experience on this site.
+            </p>
+        </section>
+    </main>
 
-    <section id="table-of-contents">
-        <h2>Table des matières: Guide de tutorat d'anglais privé</h2>
-        <ol>
-            <li>Introduction à l'apprentissage de l'anglais
-                <ul>
-                    <li>Comprendre les besoins et les objectifs de l'étudiant</li>
-                    <li>Évaluer la compétence en anglais (débutant, intermédiaire, avancé)</li>
-                    <li>Créer un plan d'apprentissage personnalisé</li>
-                </ul>
-            </li>
-            <li>Bases de l'anglais (pour débutants)
-                <ul>
-                    <li>L'alphabet et la prononciation</li>
-                    <li>Mots courants et expressions de base</li>
-                    <li>Salutations simples et présentation de soi</li>
-                    <li>Structure de phrase de base (sujet-verbe-complément)</li>
-                    <li>Nombres, dates et heure</li>
-                </ul>
-            </li>
-            <li>Principes fondamentaux de la grammaire
-                <ul>
-                    <li>Noms et pronoms (singulier/pluriel, formes possessives)</li>
-                    <li>Verbes et temps (présent, passé, futur, continu, parfait)</li>
-                    <li>Adjectifs et adverbes (comparatifs et superlatifs)</li>
-                    <li>Prépositions et conjonctions</li>
-                    <li>Articles (a, an, the) et leur utilisation</li>
-                    <li>Structures de phrases et ordre des mots</li>
-                </ul>
-            </li>
-            <li>Pratique de la parole et de la prononciation
-                <ul>
-                    <li>Phonétique et erreurs de prononciation courantes</li>
-                    <li>Syllabes et schémas d'accentuation</li>
-                    <li>Exercices de conversation et conversations quotidiennes</li>
-                    <li>Jeux de rôle de scénarios courants (faire du shopping, voyager, commander de la nourriture)</li>
-                </ul>
-            </li>
-            <li>Développement du vocabulaire
-                <ul>
-                    <li>Vocabulaire de la vie quotidienne (nourriture, voyage, travail, école, famille)</li>
-                    <li>Synonymes et antonymes</li>
-                    <li>Verbes à particule et expressions idiomatiques</li>
-                    <li>Langue formelle vs informelle</li>
-                    <li>Mots couramment confondus</li>
-                </ul>
-            </li>
-            <li>Compétences en écriture
-                <ul>
-                    <li>Structure de phrases et de paragraphes</li>
-                    <li>Écrire des e-mails et des lettres formelles</li>
-                    <li>Écriture créative (nouvelles, journaux)</li>
-                    <li>Rédaction d'essais (introduction, corps, conclusion)</li>
-                    <li>Erreurs d'écriture courantes et comment les éviter</li>
-                </ul>
-            </li>
-            <li>Lecture et compréhension
-                <ul>
-                    <li>Comprendre différents types de textes (histoires, actualités, e-mails)</li>
-                    <li>Stratégies de lecture (écrémage, balayage, lecture détaillée)</li>
-                    <li>Résumer et raconter des histoires</li>
-                    <li>Développer le vocabulaire par la lecture</li>
-                </ul>
-            </li>
-            <li>Écoute et compréhension de l'anglais
-                <ul>
-                    <li>Écoute de locuteurs natifs (podcasts, livres audio, vidéos)</li>
-                    <li>Exercices de compréhension (répondre à des questions sur des extraits audio)</li>
-                    <li>Reconnaître les accents et la parole rapide</li>
-                    <li>Prendre des notes pendant l'écoute</li>
-                </ul>
-            </li>
-            <li>Communication avancée et fluidité
-                <ul>
-                    <li>Pratique du débat et de la discussion</li>
-                    <li>Exprimer des opinions et discours argumentatif</li>
-                    <li>Prise de parole en public</li>
-                </ul>
-            </li>
-            <li><strong> Structures de phrases avancées:</strong>
-                <ul>
-                    <li>Subordonnées</li>
-                    <li>Phrases complexes</li>
-                    <li>Et plus</li>
-                </ul>
-            </li>
-            <li><strong> Préparation aux examens (si nécessaire):</strong>
-                <ul>
-                    <li>TOEFL, IELTS, Cambridge</li>
-                    <li>Conseils pour les examens</li>
-                    <li>Tests et exercices pratiques</li>
-                    <li>Améliorer la vitesse et la précision</li>
-                </ul>
-            </li>
-            <li><strong> Compréhension culturelle et anglais courant:</strong>
-                <ul>
-                    <li>Expressions culturelles courantes et argot</li>
-                    <li>Humour et blagues en anglais</li>
-                    <li>Normes sociales dans les pays anglophones</li>
-                </ul>
-            </li>
-            <li><strong> Plans de révision et de pratique:</strong>
-                <ul>
-                    <li>Séances de révision hebdomadaires et mensuelles</li>
-                    <li>Livres, applications et ressources recommandés</li>
-                    <li>Création d'un plan d'étude personnalisé pour chaque étudiant</li>
-                </ul>
-            </li>
-        </ol>
-    </section>
-
-    <footer>
-        <p>&copy; 2025 Tutoring English Language. Tous droits réservés.</p>
-         <p>Ce site ne collecte aucune donnée personnelle. Nous utilisons Google AdSense pour afficher des annonces, et Google peut utiliser des cookies. Pour plus d'informations, consultez la <a href="https://policies.google.com/privacy">politique de confidentialité de Google</a>.</p>
-<p>Les seuls contacts possibles sont via l'adresse courriel affiché sur cette page, et les adresses courriel ne seront pas vendu à des tiers.</p>
+    <footer class="p-6 bg-gradient-to-r from-gray-800 via-gray-900 to-black text-white text-center">
+        &copy; 2025 EnglishMontreal101. All rights reserved.
     </footer>
+
+    <script>
+        const translations = {
+            en: {
+                "choose-language": "Choose your language:",
+                "word-of-day": "📖 Word of the Day",
+                "testimonials": "✨ What Our Students Say",
+                "review1": "\"I improved so fast! The lessons were fun and easy to understand.\"",
+                "review2": "\"The placement test helped me know exactly where to start. Highly recommend!\"",
+                "contact-us": "📬 Contact Us",
+                "privacy": "🔐 Privacy Policy",
+                "privacy-text": "We value your privacy. Any data submitted through forms is only used to contact you about your lesson inquiries and is never shared with third parties. Cookies are used only to enhance your experience on this site."
+            },
+            fr: {
+                "choose-language": "Choisissez votre langue :",
+                "word-of-day": "📖 Mot du jour",
+                "testimonials": "✨ Ce que disent nos étudiants",
+                "review1": "\"J'ai progressé rapidement ! Les leçons étaient amusantes et faciles à comprendre.\"",
+                "review2": "\"Le test de placement m'a aidé à savoir exactement par où commencer. Je recommande vivement !\"",
+                "contact-us": "📬 Contactez-nous",
+                "privacy": "🔐 Politique de confidentialité",
+                "privacy-text": "Nous respectons votre vie privée. Toutes les données envoyées via les formulaires sont uniquement utilisées pour vous contacter au sujet de vos demandes de cours et ne sont jamais partagées avec des tiers. Les cookies sont uniquement utilisés pour améliorer votre expérience sur ce site...."
+            },
+            es: {
+                "choose-language": "Elige tu idioma:",
+                "word-of-day": "📖 Palabra del día",
+                "testimonials": "✨ Lo que dicen nuestros estudiantes",
+                "review1": "\"¡Mejoré muy rápido! Las lecciones fueron divertidas y fáciles de entender.\"",
+                "review2": "\"¡La prueba me ayudó a saber por dónde empezar exactamente! Muy recomendable.\"",
+                "contact-us": "📬 Contáctanos",
+                "privacy": "🔐 Política de privacidad",
+                "privacy-text": "Valoramos tu privacidad. Cualquier dato enviado a través de los formularios se utiliza únicamente para contactarte sobre tus consultas de clases y nunca se comparte con terceros. Las cookies se utilizan solo para mejorar tu experiencia en este sitio."
+            },
+            ar: {
+                "choose-language": "اختر لغتك:",
+                "word-of-day": "📖 كلمة اليوم",
+                "testimonials": "✨ آراء طلابنا",
+                "review1": "\"تقدمت بسرعة! كانت الدروس ممتعة وسهلة الفهم.\"",
+                "review2": "\"ساعدني الاختبار على معرفة من أين أبدأ بالضبط. أنصح به بشدة!\"",
+                "contact-us": "📬 اتصل بنا",
+                "privacy": "🔐 سياسة الخصوصية",
+                "privacy-text":
+"نحن نُقدّر خصوصيتك. يتم استخدام أي بيانات تُرسل عبر النماذج فقط للتواصل معك بشأن استفساراتك حول الدروس، ولا تتم مشاركتها أبدًا مع أطراف ثالثة. تُستخدم ملفات تعريف الارتباط فقط لتحسين تجربتك على هذا الموقع.",
+
+
+            }
+        };
+
+        function setLanguage(lang) {
+            document.querySelectorAll('[data-i18n]').forEach(el => {
+                const key = el.getAttribute('data-i18n');
+                if (translations[lang] && translations[lang][key]) {
+                    el.innerHTML = translations[lang][key];
+                }
+            });
+        }
+
+        document.getElementById('lang-en').onclick = () => setLanguage('en');
+        document.getElementById('lang-fr').onclick = () => setLanguage('fr');
+        document.getElementById('lang-es').onclick = () => setLanguage('es');
+        document.getElementById('lang-ar').onclick = () => setLanguage('ar');
+
+        // Theme Toggle
+        const themeToggle = document.getElementById('theme-toggle');
+
+        function setTheme(theme) {
+            if (theme === 'dark') {
+                document.documentElement.classList.add('dark');
+                localStorage.theme = 'dark';
+                themeToggle.textContent = '☀️';
+            } else {
+                document.documentElement.classList.remove('dark');
+                localStorage.theme = 'light';
+                themeToggle.textContent = '🌙';
+            }
+        }
+
+        if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            setTheme('dark');
+        } else {
+            setTheme('light');
+        }
+
+        themeToggle.addEventListener('click', function () {
+            const currentTheme = localStorage.theme;
+            setTheme(currentTheme === 'dark' ? 'light' : 'dark');
+        });
+
+        const words = [
+            { word: 'Break the ice', definition: 'To initiate conversation in a social setting.' },
+            { word: 'Hit the books', definition: 'To study hard.' },
+            { word: 'Under the weather', definition: 'Feeling sick or unwell.' },
+            { word: 'Piece of cake', definition: 'Very easy to do.' },
+            { word: 'Once in a blue moon', definition: 'Very rarely.' },
+            { word: 'Let the cat out of the bag', definition: 'Reveal a secret.' },
+            { word: 'See eye to eye', definition: 'Agree with someone.' },
+            { word: 'Kill two birds with one stone', definition: 'Solve two problems at once.' },
+        ];
+
+        let userWordIndex = localStorage.getItem('userWordIndex');
+
+        if (userWordIndex === null) {
+            userWordIndex = Math.floor(Math.random() * words.length);
+            localStorage.setItem('userWordIndex', userWordIndex);
+        }
+
+        document.getElementById('word').textContent = words[userWordIndex].word;
+        document.getElementById('definition').textContent = words[userWordIndex].definition;
+
+        document.getElementById('quiz-form').addEventListener('submit', function (e) {
+            e.preventDefault();
+            const correctAnswers = {
+                q1: 'b',
+                q2: 'b',
+                q3: 'b'
+            };
+            let score = 0;
+            for (const [question, answer] of Object.entries(correctAnswers)) {
+                const selected = document.querySelector(`input[name="${question}"]:checked`);
+                if (selected && selected.value === answer) {
+                    score++;
+                }
+            }
+            let result = '';
+            if (score === 3) result = 'Level: Advanced 🚀';
+            else if (score >= 1) result = 'Level: Intermediate 💪';
+            else result = 'Level: Beginner 🌱';
+            document.getElementById('quiz-result').textContent = result;
+        });
+
+        document.getElementById('contact-form').addEventListener('submit', async function (e) {
+            e.preventDefault();
+            const form = e.target;
+            const formMsg = document.getElementById('form-msg');
+            const formData = new FormData(form);
+
+            const response = await fetch('https://formspree.io/f/xdkebenj', {
+                method: 'POST',
+                headers: {
+                    'Accept': 'application/json'
+                },
+                body: formData
+            });
+
+            if (response.ok) {
+                form.reset();
+                formMsg.classList.remove('hidden');
+            }
+        });
+    </script>
 </body>
+
 </html>
