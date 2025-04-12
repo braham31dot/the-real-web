@@ -17,21 +17,58 @@
         } else {
             document.documentElement.classList.remove('dark');
         }
+    </head>
     </script>
-</head>
-
 <body class="bg-gradient-to-br from-purple-200 via-pink-100 to-blue-200 dark:from-gray-900 dark:via-gray-800 dark:to-black text-gray-900 dark:text-gray-100 font-sans">
-    <header class="p-6 bg-gradient-to-r from-pink-500 via-purple-500 to-blue-500 dark:from-gray-800 dark:via-gray-700 dark:to-gray-900 flex justify-between items-center shadow-lg">
-        <h1 class="text-3xl font-extrabold tracking-tight">🌐 EnglishMontreal101</h1> 
-        <div class="flex gap-2">
-<h1 class="text-2xl font-bold tracking-tight">please choose</h1>
-            <button id="lang-en" class="bg-white dark:bg-gray-700 text-gray-900 dark:text-white text-sm px-2 py-1 rounded">EN</button>
-            <button id="lang-fr" class="bg-white dark:bg-gray-700 text-gray-900 dark:text-white text-sm px-2 py-1 rounded">FR</button>
-            <button id="lang-es" class="bg-white dark:bg-gray-700 text-gray-900 dark:text-white text-sm px-2 py-1 rounded">ES</button>
-            <button id="lang-ar" class="bg-white dark:bg-gray-700 text-gray-900 dark:text-white text-sm px-2 py-1 rounded">AR</button>
-            <button id="theme-toggle" class="bg-white dark:bg-gray-700 text-sm text-gray-900 dark:text-white px-2 py-1 rounded shadow hover:scale-105 transition">🌙</button>
+    <header class="p-6 bg-gradient-to-r from-pink-500 via-purple-500 to-blue-500 dark:from-gray-800 dark:via-gray-700 dark:to-gray-900 flex justify-between items-center shadow-lg flex-wrap">
+        <h1 class="text-3xl font-extrabold tracking-tight mb-4 sm:mb-0">🌐 EnglishMontreal101</h1> 
+        <div class="flex gap-2 flex-wrap items-center justify-center">
+            <h1 class="text-2xl font-bold tracking-tight mb-2 sm:mb-0">please choose</h1>
+            <button id="lang-en" class="bg-white dark:bg-gray-700 text-gray-900 dark:text-white text-sm px-3 py-2 rounded mb-2 sm:mb-0">EN</button>
+            <button id="lang-fr" class="bg-white dark:bg-gray-700 text-gray-900 dark:text-white text-sm px-3 py-2 rounded mb-2 sm:mb-0">FR</button>
+            <button id="lang-es" class="bg-white dark:bg-gray-700 text-gray-900 dark:text-white text-sm px-3 py-2 rounded mb-2 sm:mb-0">ES</button>
+            <button id="lang-ar" class="bg-white dark:bg-gray-700 text-gray-900 dark:text-white text-sm px-3 py-2 rounded mb-2 sm:mb-0">AR</button>
+            <button id="theme-toggle" class="bg-white dark:bg-gray-700 text-sm text-gray-900 dark:text-white px-3 py-2 rounded shadow hover:scale-105 transition mb-2 sm:mb-0">🌙</button>
         </div>
     </header>
+
+    <style>
+        /* Make the header items stack and become centered on small screens */
+        @media (max-width: 640px) {
+            header {
+                padding: 1.5rem;
+            }
+
+            h1.text-3xl {
+                font-size: 1.5rem;
+                text-align: center;
+            }
+
+            .flex-wrap {
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+            }
+
+            .flex button {
+                margin-bottom: 0.5rem; /* Add some space between buttons */
+                width: 80%; /* Make buttons take more space on smaller screens */
+            }
+
+            .gap-2 {
+                gap: 1rem; /* Increased gap between buttons for mobile */
+            }
+        }
+
+        /* For tablets or larger devices, make sure the header items look balanced */
+        @media (min-width: 641px) {
+            .flex-wrap {
+                flex-direction: row;
+            }
+        }
+    </style>
+</body>
+
 
     <main class="p-4 md:p-6 max-w-3xl mx-auto">
    
