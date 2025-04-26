@@ -26,7 +26,7 @@
              <button id="lang-ar" class="bg-white dark:bg-gray-700 text-gray-900 dark:text-white text-sm px-3 py-2 rounded mb-2 sm:mb-0">AR</button>
              <button id="theme-toggle" class="bg-white dark:bg-gray-700 text-sm text-gray-900 dark:text-white px-3 py-2 rounded shadow hover:scale-105 transition mb-2 sm:mb-0">🌙</button>
          </div>
-      <button id="themeToggle">🌙</button> <!-- Button for toggling theme -->
+
      </header>
  
      <style>
@@ -387,44 +387,6 @@ button:hover {
   color: #fff;
 }
 
-/* Heading */
-.modal-content h2 {
-  text-align: center;
-  font-size: 1.8rem;
-  margin-bottom: 10px;
-  color: #ff3c78;
-}
- /* Example CSS for themes */
-:root {
-    --background-color: white;
-    --text-color: black;
-}
-
-.dark {
-    --background-color: #333;
-    --text-color: white;
-}
-
-.purple {
-    --background-color: #9b59b6;
-    --text-color: white;
-}
-
-.redpink {
-    --background-color: #ff69b4;
-    --text-color: white;
-}
-
-.light {
-    --background-color: white;
-    --text-color: black;
-}
-
-body {
-    background-color: var(--background-color);
-    color: var(--text-color);
-}
-
 /* Glowing Cyberpunk Button */
 .glow-btn {
   width: 50px;
@@ -742,52 +704,6 @@ Join us at Engtutor.ink, where learning English is accessible, convenient, and e
          document.getElementById('lang-fr').onclick = () => setLanguage('fr');
          document.getElementById('lang-es').onclick = () => setLanguage('es');
          document.getElementById('lang-ar').onclick = () => setLanguage('ar');
- 
-// Define available themes
-const themes = ['light', 'dark', 'purple', 'redpink'];
-let currentThemeIndex = 0; // Default to the first theme (light)
-
-// Get the theme toggle button
-const themeToggle = document.getElementById('themeToggle'); // Ensure you have this element in your HTML
-
-// Function to set the theme
-function setTheme(theme) {
-    // Remove all possible theme classes
-    document.documentElement.classList.remove('light', 'dark', 'purple', 'redpink');
-
-    // Add the selected theme class
-    if (theme === 'dark') {
-        document.documentElement.classList.add('dark');
-        themeToggle.textContent = '☀️'; // Light mode icon
-    } else if (theme === 'purple') {
-        document.documentElement.classList.add('purple');
-        themeToggle.textContent = '💜'; // Purple heart
-    } else if (theme === 'redpink') {
-        document.documentElement.classList.add('redpink');
-        themeToggle.textContent = '🌸'; // Flower for red/pink
-    } else {
-        document.documentElement.classList.add('light');
-        themeToggle.textContent = '🌙'; // Dark moon for light mode
-    }
-
-    // Save the selected theme to localStorage
-    localStorage.theme = theme;
-}
-
-// Initialize theme on page load
-if (localStorage.theme && themes.includes(localStorage.theme)) {
-    currentThemeIndex = themes.indexOf(localStorage.theme);
-    setTheme(localStorage.theme);
-} else {
-    setTheme('light'); // Default to light mode if no theme is stored
-}
-
-// Toggle theme on click
-themeToggle.addEventListener('click', () => {
-    currentThemeIndex = (currentThemeIndex + 1) % themes.length;
-    setTheme(themes[currentThemeIndex]);
-});
-
  
          const words = [
              { word: 'Break the ice', definition: 'To initiate conversation in a social setting.' },
