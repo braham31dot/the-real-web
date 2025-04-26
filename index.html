@@ -72,34 +72,6 @@
      </style>
  </body>
  
- 
-     <main class="p-4 md:p-6 max-w-3xl mx-auto">
-    
- <section class="tutoring-summary">
-   <!-- Our Services Button -->
-   <button class="cta-button" id="servicesButton">Our Services</button>
- 
-   <!-- Modal (Pop-up Box) -->
-   <div class="modal" id="servicesModal">
-     <div class="modal-content">
-       <span class="close" id="closeModal">&times;</span>
-       <h2>EN/FR - Private English Tutoring Guide Summary</h2>
-       <ul>
-         <li><strong>Introduction & learning goals</strong> / Introduction & objectifs d'apprentissage</li>
-         <li><strong>English basics:</strong> alphabet, greetings, simple sentences / Bases de l'anglais : alphabet, salutations, phrases simples</li>
-         <li><strong>Grammar:</strong> nouns, verbs, adjectives, sentence structure / Grammaire : noms, verbes, adjectifs, structure des phrases</li>
-         <li><strong>Speaking & pronunciation:</strong> phonetics, roleplays / Expression orale & prononciation : phonétique, jeux de rôle</li>
-         <li><strong>Vocabulary building:</strong> daily topics, idioms / Vocabulaire : vie quotidienne, expressions idiomatiques</li>
-         <li><strong>Writing:</strong> emails, essays, creative texts / Écriture : e-mails, essais, rédaction créative</li>
-         <li><strong>Reading:</strong> comprehension strategies, summaries / Lecture : stratégies de compréhension, résumés</li>
-         <li><strong>Listening:</strong> audio practice, accents / Écoute : audios, reconnaissance des accents</li>
-         <li><strong>Advanced communication & fluency</strong> / Communication avancée & fluidité</li>
-         <li><strong>Exam prep, culture, review plans</strong> / Préparation aux examens, culture, plans de révision</li>
-       </ul>
-     </div>
-   </div>
- </section>
- 
  <script>
    // Get elements
    const servicesButton = document.getElementById('servicesButton');
@@ -126,19 +98,18 @@
  
  <style>
    /* General styling for the tutoring summary */
-   .cta-button {
-     display: inline-block;
-     padding: 0.8rem 2rem;
-     background-color: #ff88a0;
-     color: white;
-     border: none;
-     border-radius: 30px;
-     font-size: 1.2rem;
-     text-transform: uppercase;
-     cursor: pointer;
-     font-family: 'Segoe UI', sans-serif;
-     transition: all 0.3s ease;
-   }
+      .cta-button {
+     display: inline-block;
+     padding: 0.8rem 2rem;
+     background-color: #ff88a0;
+     color: white;
+     border: none;
+     border-radius: 30px;
+     font-size: 1.2rem;
+     text-transform: uppercase;
+     cursor: pointer;
+     font-family: 'Roboto', sans-serif; /* Changed font family to Roboto */
+     transition: all 0.3s ease;
  
    .cta-button:hover {
      background-color: #f16a6a;
@@ -465,6 +436,32 @@ button:hover {
      <footer class="p-6 bg-gradient-to-r from-gray-800 via-gray-900 to-black text-white text-center">
          &copy; 2025 EnglishMontreal101. All rights reserved.
      </footer>
+ <main class="p-4 md:p-6 max-w-3xl mx-auto">
+    
+ <section class="tutoring-summary">
+   <!-- Our Services Button -->
+   <button class="cta-button" id="servicesButton">Our Services</button>
+ 
+   <!-- Modal (Pop-up Box) -->
+   <div class="modal" id="servicesModal">
+     <div class="modal-content">
+       <span class="close" id="closeModal">&times;</span>
+       <h2>EN/FR - Private English Tutoring Guide Summary</h2>
+       <ul>
+         <li><strong>Introduction & learning goals</strong> / Introduction & objectifs d'apprentissage</li>
+         <li><strong>English basics:</strong> alphabet, greetings, simple sentences / Bases de l'anglais : alphabet, salutations, phrases simples</li>
+         <li><strong>Grammar:</strong> nouns, verbs, adjectives, sentence structure / Grammaire : noms, verbes, adjectifs, structure des phrases</li>
+         <li><strong>Speaking & pronunciation:</strong> phonetics, roleplays / Expression orale & prononciation : phonétique, jeux de rôle</li>
+         <li><strong>Vocabulary building:</strong> daily topics, idioms / Vocabulaire : vie quotidienne, expressions idiomatiques</li>
+         <li><strong>Writing:</strong> emails, essays, creative texts / Écriture : e-mails, essais, rédaction créative</li>
+         <li><strong>Reading:</strong> comprehension strategies, summaries / Lecture : stratégies de compréhension, résumés</li>
+         <li><strong>Listening:</strong> audio practice, accents / Écoute : audios, reconnaissance des accents</li>
+         <li><strong>Advanced communication & fluency</strong> / Communication avancée & fluidité</li>
+         <li><strong>Exam prep, culture, review plans</strong> / Préparation aux examens, culture, plans de révision</li>
+       </ul>
+     </div>
+   </div>
+ </section>
  
      <script>
          const translations = {
