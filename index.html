@@ -578,45 +578,37 @@ button:hover {
  
          document.getElementById('word').textContent = words[userWordIndex].word;
          document.getElementById('definition').textContent = words[userWordIndex].definition;
- 
-    const questionDivs = [
-  'question8',
-  'question3',
-  'question4',
-  'question5',
-  'question6',
-  'question7',
-  'question2',
-  'question9',
-  'question10',
+ const questionDivs = [
+  'p.1', 'p.2', 'p.3', 'p.4', 'p.5',
+  'p.6', 'p.7', 'p.8', 'p.9', 'p.10'
 ];
 
 function displayWeeklyQuestion() {
-  const currentDate = new Date();
-  const startOfYear = new Date(currentDate.getFullYear(), 0, 1);
-  const days = Math.floor((currentDate - startOfYear) / (24 * 60 * 60 * 1000));
-  const weekNumber = Math.ceil((days + 1) / 7);
-  const questionIndex = (weekNumber - 1) % questionDivs.length;
-  const currentQuestionId = questionDivs[questionIndex];
+  const today = new Date();
+  const yearStart = new Date(today.getFullYear(), 0, 1);
+  const daysSinceStart = Math.floor((today - yearStart) / (1000 * 60 * 60 * 24));
+  const currentWeek = Math.ceil((daysSinceStart + 1) / 7);
+
+  const questionIndex = (currentWeek - 1) % questionDivs.length;
+  const currentId = questionDivs[questionIndex];
 
   // Hide all question divs
   questionDivs.forEach(id => {
-    const div = document.getElementById(id);
-    if (div) {
-      div.style.display = 'none';
-    }
+    const el = document.getElementById(id);
+    if (el) el.style.display = 'none';
   });
 
-  // Show the question div for the current week
-  const currentQuestionDiv = document.getElementById(currentQuestionId);
-  if (currentQuestionDiv) {
-    currentQuestionDiv.style.display = 'block';
+  // Show current week's div
+  const currentDiv = document.getElementById(currentId);
+  if (currentDiv) {
+    currentDiv.style.display = 'block';
   } else {
-    console.error(`Question div with ID '${currentQuestionId}' not found.`);
+    console.warn(`Div with ID '${currentId}' not found.`);
   }
 }
 
 document.addEventListener('DOMContentLoaded', displayWeeklyQuestion);
+
       
       
     const vocabularyWords = [
