@@ -742,17 +742,19 @@ Join us at Engtutor.ink, where learning English is accessible, convenient, and e
          document.getElementById('lang-es').onclick = () => setLanguage('es');
          document.getElementById('lang-ar').onclick = () => setLanguage('ar');
  
-// Theme Toggle
-const themeToggle = document.getElementById('theme-toggle');
-
-// Define your custom themes
+// Define available themes
 const themes = ['light', 'dark', 'purple', 'redpink'];
-let currentThemeIndex = 0;
+let currentThemeIndex = 0; // Default to the first theme (light)
 
-// Apply theme function
+// Get the theme toggle button
+const themeToggle = document.getElementById('themeToggle'); // Ensure you have this element in your HTML
+
+// Function to set the theme
 function setTheme(theme) {
-    document.documentElement.classList.remove('dark', 'purple', 'redpink');
+    // Remove all possible theme classes
+    document.documentElement.classList.remove('light', 'dark', 'purple', 'redpink');
 
+    // Add the selected theme class
     if (theme === 'dark') {
         document.documentElement.classList.add('dark');
         themeToggle.textContent = '☀️'; // Light mode icon
@@ -763,9 +765,11 @@ function setTheme(theme) {
         document.documentElement.classList.add('redpink');
         themeToggle.textContent = '🌸'; // Flower for red/pink
     } else {
-        themeToggle.textContent = '🌙'; // Dark moon for bright mode
+        document.documentElement.classList.add('light');
+        themeToggle.textContent = '🌙'; // Dark moon for light mode
     }
 
+    // Save the selected theme to localStorage
     localStorage.theme = theme;
 }
 
@@ -774,7 +778,7 @@ if (localStorage.theme && themes.includes(localStorage.theme)) {
     currentThemeIndex = themes.indexOf(localStorage.theme);
     setTheme(localStorage.theme);
 } else {
-    setTheme('light'); // Always start bright by default
+    setTheme('light'); // Default to light mode if no theme is stored
 }
 
 // Toggle theme on click
@@ -783,7 +787,6 @@ themeToggle.addEventListener('click', () => {
     setTheme(themes[currentThemeIndex]);
 });
 
- 
  
          const words = [
              { word: 'Break the ice', definition: 'To initiate conversation in a social setting.' },
