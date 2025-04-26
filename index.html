@@ -318,6 +318,57 @@ button:hover {
     font-size: 5rem;
   }
 }
+  <style>
+/* Modal base styling */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background: rgba(0, 255, 255, 0.1);
+  backdrop-filter: blur(6px);
+}
+
+/* Modal content styling */
+.modal-content {
+  background-color: #0f0f1a;
+  color: #00ffff;
+  margin: 10% auto;
+  padding: 20px;
+  border: 1px solid #00ffff;
+  width: 80%;
+  max-width: 600px;
+  border-radius: 12px;
+  box-shadow: 0 0 30px #00ffff;
+  font-family: 'Orbitron', sans-serif;
+}
+
+/* Close button */
+.close {
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  color: #ff3c78;
+  cursor: pointer;
+}
+
+.close:hover {
+  color: #fff;
+}
+
+/* Heading */
+.modal-content h2 {
+  text-align: center;
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+  color: #ff3c78;
+}
+</style>
+
 
 
  </style>
@@ -458,7 +509,18 @@ button:hover {
          </section>
                <section class="tutoring-summary">
    <!-- Our Services Button -->
-   <button class="cta-button" id="servicesButton">Our Services</button>
+   <button class="cta-button" id="aboutusButton">About Us</button>
+                <div class="modal" id="aboutUsModal">
+  <div class="modal-content">
+    <span class="close" id="closeAboutUs">&times;</span>
+    <h2>About Us</h2>
+    <p>
+      We are a futuristic digital collective offering interactive education and innovative web services.  
+      Our mission? Empower learners and creators in a hyper-connected world. 💻🌍✨  
+      From tutoring to tech—tailored, halal, and always human.  
+    </p>
+  </div>
+</div>
 
      </main>
  
@@ -712,10 +774,26 @@ document.addEventListener('DOMContentLoaded', () => {
 
     shuffleWords(); // Shuffle at the beginning
   </script>
-</body>
-</html>
+                <script>
+document.addEventListener('DOMContentLoaded', () => {
+  const aboutBtn = document.getElementById('aboutusButton');
+  const aboutModal = document.getElementById('aboutUsModal');
+  const closeAbout = document.getElementById('closeAboutUs');
 
-     </script>
+  aboutBtn.addEventListener('click', () => {
+    aboutModal.style.display = 'block';
+  });
+
+  closeAbout.addEventListener('click', () => {
+    aboutModal.style.display = 'none';
+  });
+
+  window.addEventListener('click', (e) => {
+    if (e.target === aboutModal) {
+      aboutModal.style.display = 'none';
+    }
+  });
+});
+</script>
  </body>
- 
  </html>
