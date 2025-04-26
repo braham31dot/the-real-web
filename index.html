@@ -35,6 +35,7 @@
      </header>
  
      <style>
+    
          /* Make the header items stack and become centered on small screens */
          @media (max-width: 640px) {
              header {
@@ -228,6 +229,50 @@
        font-size: 1rem;
      }
    }
+  body {
+  font-family: "Segoe UI", sans-serif;
+  background-color: #f8f6ff; /* soft white background */
+  color: #5c2d91; /* deep purple text */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: start;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+h1 {
+  color: #7f3fbf;
+}
+
+#wordDisplay {
+  font-size: 2rem;
+  margin: 20px;
+  font-weight: bold;
+  color: #5c2d91;
+}
+
+button {
+  background-color: #7f3fbf;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  margin: 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  font-size: 1rem;
+}
+
+button:hover {
+  background-color: #a084ca;
+}
+
+#scoreDisplay {
+  font-size: 1.2rem;
+  margin-top: 10px;
+}
+
  </style>
      </section>
  
@@ -452,6 +497,65 @@
                  formMsg.classList.remove('hidden');
              }
          });
+      <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vocabulary Game</title>
+  <style>
+    /* INSERT the updated white and purple CSS here */
+  </style>
+</head>
+<body>
+  <h1>Vocabulary Game</h1>
+  <div id="wordDisplay">Press start to begin</div>
+  <button onclick="nextWord()">Start / Next Word</button>
+  <button onclick="increaseScore()">I Know This!</button>
+  <div id="scoreDisplay">Score: 0</div>
+
+  <script>
+    const vocabularyWords = [
+      "apple", "ball", "cat", "dog", "egg", "fish", "goat", "hat", "ice", "jam",
+      "kite", "lion", "moon", "nose", "orange", "pen", "queen", "rat", "sun", "top",
+      "umbrella", "van", "watch", "xray", "yak", "zebra",
+      "alarm", "brave", "climb", "dance", "eagle", "fancy", "giant", "horse", "island", "jelly",
+      "karate", "lemon", "magic", "ninja", "ocean", "piano", "quick", "river", "super", "train",
+      "unicorn", "vivid", "whale", "xenon", "yacht", "zombie",
+      "ankle", "banana", "castle", "dragon", "engine", "fossil", "goblin", "hammer", "igloo", "jungle",
+      "kazoo", "ladder", "mirror", "nacho", "orbit", "pirate", "quartz", "rocket", "sneeze", "tunnel",
+      "update", "vacuum", "wiggle", "xylitol", "yogurt", "zephyr"
+    ];
+
+    let currentIndex = 0;
+    let score = 0;
+
+    function nextWord() {
+      if (currentIndex >= vocabularyWords.length) {
+        currentIndex = 0;
+        shuffleWords();
+      }
+      document.getElementById("wordDisplay").textContent = vocabularyWords[currentIndex];
+      currentIndex++;
+    }
+
+    function increaseScore() {
+      score++;
+      document.getElementById("scoreDisplay").textContent = "Score: " + score;
+    }
+
+    function shuffleWords() {
+      for (let i = vocabularyWords.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [vocabularyWords[i], vocabularyWords[j]] = [vocabularyWords[j], vocabularyWords[i]];
+      }
+    }
+
+    shuffleWords(); // Shuffle at the beginning
+  </script>
+</body>
+</html>
+
      </script>
  </body>
  
