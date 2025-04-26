@@ -672,29 +672,22 @@ document.addEventListener('DOMContentLoaded', () => {
     // Save to localStorage
     localStorage.setItem('quizAnswers', JSON.stringify(userAnswers));
 
-    // Try to sync with Nhost
-    const userId = nhost.auth.getUser()?.id;
-    if (userId) {
-      await saveToNhost(userId, userAnswers); // Save to Nhost DB
-    } else {
-      console.warn("No Nhost user found. Data only stored locally.");
-    }
+    // Try to sync with Nhost (without authentication)
+    await saveToNhost(userAnswers); // Save to Nhost DB (no authentication needed)
   });
 });
 
-// Function to display weekly question
+// Function to display weekly question (show only one per week)
 function displayWeeklyQuestion() {
   const today = new Date();
   const customStartDate = new Date(2025, 3, 25); // Start date: April 25, 2025
   const daysSinceStart = Math.floor((today - customStartDate) / (1000 * 60 * 60 * 24));
   const currentWeek = Math.max(1, Math.ceil((daysSinceStart + 1) / 7)); // Ensure it's never below week 1
 
-  if (currentWeek > 10) {
-    console.log("All questions done!");
-    return; // Stop after 10 weeks
-  }
+  // Reset to 1 after 10 weeks
+  const questionWeek = currentWeek > 10 ? 1 : currentWeek;
 
-  const currentId = `p.${currentWeek}`; // Get current week's ID
+  const currentId = `p.${questionWeek}`; // Get current week's ID
 
   // Hide all questions
   document.querySelectorAll("[id^='p.']").forEach((el) => {
@@ -703,6 +696,30 @@ function displayWeeklyQuestion() {
 
   // Display the current week's question
   document.getElementById(currentId).style.display = 'block';
+}
+
+// Function to save data to Nhost (no authentication needed)
+async function saveToNhost(quizData) {
+  const nhost = new Nhost.NhostClient({
+    subdomain: 'your-nhost-subdomain',
+    region: 'your-region', // e.g., eu-west-1
+  });
+
+  const { error, data } = await nhost.graphql.request(`
+    mutation InsertResult($data: jsonb!) {
+      insert_quiz_results(objects: {data: $data}) {
+        affected_rows
+      }
+    }
+  `, {
+    data: quizData
+  });
+
+  if (error) {
+    console.error("Nhost error:", error);
+  } else {
+    console.log("Nhost sync success:", data);
+  }
 }
 
            
