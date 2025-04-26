@@ -638,36 +638,47 @@ Join us at Engtutor.ink, where learning English is accessible, convenient, and e
          document.getElementById('lang-es').onclick = () => setLanguage('es');
          document.getElementById('lang-ar').onclick = () => setLanguage('ar');
  
- // Theme Toggle
- const themeToggle = document.getElementById('theme-toggle');
- 
- function setTheme(theme) {
-     if (theme === 'dark') {
-         document.documentElement.classList.add('dark');
-         localStorage.theme = 'dark';
-         themeToggle.textContent = '☀️'; // Light mode icon
-     } else {
-         document.documentElement.classList.remove('dark');
-         localStorage.theme = 'light';
-         themeToggle.textContent = '🌙'; // Dark mode icon
-     }
- }
- 
- // Initialize theme on page load
- if (
-     localStorage.theme === 'dark' ||
-     (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)
- ) {
-     setTheme('dark');
- } else {
-     setTheme('light');
- }
- 
- // Toggle theme on click
- themeToggle.addEventListener('click', () => {
-     const newTheme = localStorage.theme === 'dark' ? 'light' : 'dark';
-     setTheme(newTheme);
- });
+// Theme Toggle
+const themeToggle = document.getElementById('theme-toggle');
+
+// Define your custom themes
+const themes = ['light', 'dark', 'purple', 'redpink'];
+let currentThemeIndex = 0;
+
+// Apply theme function
+function setTheme(theme) {
+    document.documentElement.classList.remove('dark', 'purple', 'redpink');
+
+    if (theme === 'dark') {
+        document.documentElement.classList.add('dark');
+        themeToggle.textContent = '☀️'; // Light mode icon
+    } else if (theme === 'purple') {
+        document.documentElement.classList.add('purple');
+        themeToggle.textContent = '💜'; // Purple heart
+    } else if (theme === 'redpink') {
+        document.documentElement.classList.add('redpink');
+        themeToggle.textContent = '🌸'; // Flower for red/pink
+    } else {
+        themeToggle.textContent = '🌙'; // Dark moon for bright mode
+    }
+
+    localStorage.theme = theme;
+}
+
+// Initialize theme on page load
+if (localStorage.theme && themes.includes(localStorage.theme)) {
+    currentThemeIndex = themes.indexOf(localStorage.theme);
+    setTheme(localStorage.theme);
+} else {
+    setTheme('light'); // Always start bright by default
+}
+
+// Toggle theme on click
+themeToggle.addEventListener('click', () => {
+    currentThemeIndex = (currentThemeIndex + 1) % themes.length;
+    setTheme(themes[currentThemeIndex]);
+});
+
  
  
          const words = [
@@ -903,6 +914,40 @@ function loadSavedData() {
     console.log('Loaded game data:', savedGameData);
   }
 }
+                 <script>
+// Simple success handler
+document.addEventListener('DOMContentLoaded', () => {
+  const form = document.getElementById('contact-form');
+  const msg = document.getElementById('form-msg');
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    const formData = new FormData(form);
+    const action = form.getAttribute('action');
+
+    try {
+      const response = await fetch(action, {
+        method: 'POST',
+        body: formData,
+        headers: {
+          'Accept': 'application/json'
+        }
+      });
+
+      if (response.ok) {
+        form.reset();
+        msg.classList.remove('hidden');
+      } else {
+        alert('❌ Something went wrong. Please try again.');
+      }
+    } catch (error) {
+      console.error('Error:', error);
+      alert('❌ Something went wrong. Please try again.');
+    }
+  });
+});
+</script>
 </script>
  </body>
  </html>
