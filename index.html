@@ -13,6 +13,7 @@
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
      <title>EnglishMontreal101 - English Placement & Lessons</title>
      <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@nhost/nhost-js@2.0.0/dist/nhost.js"></script>
      <script>
          if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
              document.documentElement.classList.add('dark');
@@ -467,6 +468,28 @@ button:hover {
      </footer>
  
      <script>
+      const nhost = new Nhost.NhostClient({
+  subdomain: 'your-nhost-subdomain',
+  region: 'your-region' // e.g., eu-west-1
+});
+      async function saveToNhost(userId, quizData) {
+  const { error, data } = await nhost.graphql.request(`
+    mutation InsertResult($user_id: uuid!, $data: jsonb!) {
+      insert_quiz_results(objects: {user_id: $user_id, data: $data}) {
+        affected_rows
+      }
+    }
+  `, {
+    user_id: userId,
+    data: quizData
+  });
+
+  if (error) {
+    console.error("Nhost error:", error);
+  } else {
+    console.log("Nhost sync success:", data);
+  }
+}
          const translations = {
              en: {
                  "choose-language": "Choose your language:",
@@ -712,10 +735,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     shuffleWords(); // Shuffle at the beginning
   </script>
-</body>
-</html>
 
-     </script>
  </body>
  
  </html>
