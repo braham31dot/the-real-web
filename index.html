@@ -317,6 +317,12 @@ button:hover {
                      <footer class="text-right mt-2 font-light">— Ali R.</footer>
                  </blockquote>
              </div>
+          
+            <h1>Vocabulary Game</h1>
+                 <div id="wordDisplay">Press start to begin</div>
+                <button onclick="nextWord()">Start / Next Word</button>
+             <button onclick="increaseScore()">I Know This!</button>
+             <div id="scoreDisplay">Score: 0</div>
          </section>
  
          <section class="mb-12">
@@ -497,24 +503,7 @@ button:hover {
                  formMsg.classList.remove('hidden');
              }
          });
-      <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Vocabulary Game</title>
-  <style>
-    /* INSERT the updated white and purple CSS here */
-  </style>
-</head>
-<body>
-  <h1>Vocabulary Game</h1>
-  <div id="wordDisplay">Press start to begin</div>
-  <button onclick="nextWord()">Start / Next Word</button>
-  <button onclick="increaseScore()">I Know This!</button>
-  <div id="scoreDisplay">Score: 0</div>
-
-  <script>
+      
     const vocabularyWords = [
       "apple", "ball", "cat", "dog", "egg", "fish", "goat", "hat", "ice", "jam",
       "kite", "lion", "moon", "nose", "orange", "pen", "queen", "rat", "sun", "top",
