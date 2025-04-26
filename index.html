@@ -344,17 +344,21 @@ button:hover {
                      <label class="block"><input type="radio" name="q1" value="a"> She go to school.</label>
                      <label class="block"><input type="radio" name="q1" value="b"> She goes to school.</label>
                  </div>
-                 <div>
-                     <p>2. What is the past tense of 'eat'?</p>
-                     <label class="block"><input type="radio" name="q2" value="a"> eated</label>
-                     <label class="block"><input type="radio" name="q2" value="b"> ate</label>
-                 </div>
-                 <div>
-                     <p>3. Which is a question?</p>
-                     <label class="block"><input type="radio" name="q3" value="a"> She is tired.</label>
-                     <label class="block"><input type="radio" name="q3" value="b"> Is she tired?</label>
-                 </div>
-              <div id="question4">
+
+              
+<div id="question2">
+ <p>2. What is the past tense of 'eat'?</p>
+ <label class="block"><input type="radio" name="q2" value="a"> eated</label>
+  <label class="block"><input type="radio" name="q2" value="b"> ate</label>
+</div>
+                 
+<div id="question3">
+<p>3. Which is a question?</p>
+<label class="block"><input type="radio" name="q3" value="a"> She is tired.</label>
+<label class="block"><input type="radio" name="q3" value="b"> Is she tired?</label> 
+</div>
+              
+  <div id="question4">             
   <p>4. Identify the adverb in the following sentence: "He ran quickly down the street."</p>
   <label class="block"><input type="radio" name="q4" value="a"> He</label>
   <label class="block"><input type="radio" name="q4" value="b"> ran</label>
@@ -577,6 +581,8 @@ button:hover {
          document.getElementById('definition').textContent = words[userWordIndex].definition;
  
     const questionDivs = [
+  'question2',
+  'question3',
   'question4',
   'question5',
   'question6',
