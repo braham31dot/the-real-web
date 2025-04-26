@@ -490,6 +490,11 @@ button:hover {
     console.log("Nhost sync success:", data);
   }
 }
+      const nhost = new Nhost.NhostClient({
+  subdomain: 'your-subdomain',  // get from Nhost dashboard
+  region: 'your-region'         // like 'eu-west-1'
+});
+
          const translations = {
              en: {
                  "choose-language": "Choose your language:",
@@ -602,49 +607,13 @@ button:hover {
  
          document.getElementById('word').textContent = words[userWordIndex].word;
          document.getElementById('definition').textContent = words[userWordIndex].definition;
-const questionDivs = [
-  'p.1', 'p.2', 'p.3', 'p.4', 'p.5',
-  'p.6', 'p.7', 'p.8', 'p.9', 'p.10'
-];
-
-function displayWeeklyQuestion() {
-  const today = new Date();
-
-  // Set the custom "start" date to today (first week of questions)
-  const customStartDate = new Date(2025, 3, 25); // April 25, 2025 (Month is 0-indexed!)
-
-  const daysSinceStart = Math.floor((today - customStartDate) / (1000 * 60 * 60 * 24));
-  const currentWeek = Math.max(1, Math.ceil((daysSinceStart + 1) / 7)); // Never below week 1
-
-  if (currentWeek > questionDivs.length) {
-    console.log("All questions done!");
-    return; // Stop after 10 weeks
-  }
-
-  const currentId = questionDivs[currentWeek - 1]; // No modulo now! Just stop at 10
-
-  // Hide all question divs
-  questionDivs.forEach(id => {
-    const el = document.getElementById(id);
-    if (el) el.style.display = 'none';
-  });
-
-  // Show current week's div
-  const currentDiv = document.getElementById(currentId);
-  if (currentDiv) {
-    currentDiv.style.display = 'block';
-  } else {
-    console.warn(`Div with ID '${currentId}' not found.`);
-  }
-}
-
 document.addEventListener('DOMContentLoaded', () => {
-  displayWeeklyQuestion();
+  displayWeeklyQuestion(); // Show correct weekly question
 
   const quizForm = document.getElementById("quiz-form");
   if (!quizForm) return;
 
-  quizForm.addEventListener("submit", function (e) {
+  quizForm.addEventListener("submit", async function (e) {
     e.preventDefault();
 
     let correctAnswers = {
@@ -662,18 +631,20 @@ document.addEventListener('DOMContentLoaded', () => {
 
     let score = 0;
     let total = 0;
+    let userAnswers = {};
 
     Object.keys(correctAnswers).forEach(q => {
       const selected = quizForm.querySelector(`input[name="${q}"]:checked`);
       const parentDiv = selected ? selected.closest("label") : null;
       if (selected && parentDiv) {
+        userAnswers[q] = selected.value;
         total++;
         if (selected.value === correctAnswers[q]) {
           score++;
-          parentDiv.innerHTML += " 🌸"; // Green flower for correct
+          parentDiv.innerHTML += " 🌸";
           parentDiv.style.color = "green";
         } else {
-          parentDiv.innerHTML += " 🌹"; // Red flower for wrong
+          parentDiv.innerHTML += " 🌹";
           parentDiv.style.color = "red";
         }
       }
@@ -691,8 +662,18 @@ document.addEventListener('DOMContentLoaded', () => {
       resultMessage.textContent = `😢 Keep learning! You're a Beginner 📘 (${score}/${total})`;
       resultMessage.style.color = "red";
     }
-
     quizForm.appendChild(resultMessage);
+
+    // 🔐 Save to localStorage
+    localStorage.setItem('quizAnswers', JSON.stringify(userAnswers));
+
+    // 🌐 Try to sync with Nhost
+    const userId = nhost.auth.getUser()?.id;
+    if (userId) {
+      await saveToNhost(userId, userAnswers); // Save to Nhost DB
+    } else {
+      console.warn("No Nhost user found. Data only stored locally.");
+    }
   });
 });
 
