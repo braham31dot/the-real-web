@@ -473,11 +473,8 @@ button:hover {
      </footer>
  
      <script>
-      const nhost = new Nhost.NhostClient({
-  subdomain: 'tejidmxblscxgoicfvqk',
-  region: 'us-west-2' // e.g., eu-west-1
-});
-      async function saveToNhost(userId, quizData) {
+     
+     async function saveToNhost(userId, quizData) {
   const { error, data } = await nhost.graphql.request(`
     mutation InsertResult($user_id: uuid!, $data: jsonb!) {
       insert_quiz_results(objects: {user_id: $user_id, data: $data}) {
