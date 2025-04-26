@@ -1021,51 +1021,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 });
-                 <script>
-// Save quiz score
-function saveQuizResult(score) {
-  const results = JSON.parse(localStorage.getItem("quizResults")) || [];
-  results.push({ date: new Date().toISOString(), score });
-  localStorage.setItem("quizResults", JSON.stringify(results));
-}
-
-// Save vocabulary game score
-function saveVocabScore(score) {
-  const scores = JSON.parse(localStorage.getItem("vocabScores")) || [];
-  scores.push({ date: new Date().toISOString(), score });
-  localStorage.setItem("vocabScores", JSON.stringify(scores));
-}
-
-// Save selected language
-function saveLanguage(language) {
-  localStorage.setItem("selectedLanguage", language);
-}
-
-// Getters if needed
-function getQuizResults() {
-  return JSON.parse(localStorage.getItem("quizResults")) || [];
-}
-
-function getVocabScores() {
-  return JSON.parse(localStorage.getItem("vocabScores")) || [];
-}
-
-function getSelectedLanguage() {
-  return localStorage.getItem("selectedLanguage") || "English";
-}
-<script>
-// Load LocalStorage Data
-function getQuizResults() {
-  return JSON.parse(localStorage.getItem('quizResults')) || [];
-}
-function getVocabScores() {
-  return JSON.parse(localStorage.getItem('vocabScores')) || [];
-}
-function getSelectedLanguage() {
-  return localStorage.getItem('selectedLanguage') || 'Not selected';
-}
-
-// Function to save user data
+                 // Function to save user data
 function saveUserData(quizScore, vocabScore, language) {
   localStorage.setItem('quizResult', quizScore);
   localStorage.setItem('vocabScore', vocabScore);
@@ -1097,5 +1053,6 @@ document.getElementById('historyBtn').addEventListener('click', () => {
 // Example usage — replace these with your real quiz logic
 // saveUserData("80%", "15 pts", "French");
 
+  </script>
  </body>
  </html>
