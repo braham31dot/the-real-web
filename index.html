@@ -13,7 +13,6 @@
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
      <title>EnglishMontreal101 - English Placement & Lessons</title>
      <script src="https://cdn.tailwindcss.com"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@nhost/nhost-js@2.0.0/dist/nhost.js"></script>
      <script>
          if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
              document.documentElement.classList.add('dark');
@@ -336,88 +335,83 @@ button:hover {
              <p id="word" class="text-lg font-bold text-blue-600 dark:text-blue-300"></p>
              <p id="definition" class="text-sm italic text-gray-600 dark:text-gray-400"></p>
          </section>
-      
- <section id="placement-quiz" class="mb-12 bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md hover:scale-105 transition-all duration-500 ease-in-out">
-  <h2 class="text-2xl font-bold mb-4">🧠 Proficiency Quiz</h2>
-  <form id="quiz-form" class="space-y-4">
-    <div id="p.1">
-      <p>1. Choose the correct sentence:</p>
-      <label class="block"><input type="radio" name="q1" value="a"> She go to school.</label>
-      <label class="block"><input type="radio" name="q1" value="b"> She goes to school.</label>
-    </div>
+ 
+         <section id="placement-quiz" class="mb-12 bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md hover:scale-105 transition-all duration-500 ease-in-out">
+             <h2 class="text-2xl font-bold mb-4">🧠 Proficiency Quiz</h2>
+             <form id="quiz-form" class="space-y-4">
+               <div id="p.1">
+  <p>1. Choose the correct sentence:</p>
+  <label class="block"><input type="radio" name="q1" value="a"> She go to school.</label>
+  <label class="block"><input type="radio" name="q1" value="b"> She goes to school.</label>
+</div>
 
-    <div id="p.2">
-      <p>2. What is the past tense of 'eat'?</p>
-      <label class="block"><input type="radio" name="q2" value="a"> eated</label>
-      <label class="block"><input type="radio" name="q2" value="b"> ate</label>
-    </div>
+<div id="p.2">
+  <p>2. What is the past tense of 'eat'?</p>
+  <label class="block"><input type="radio" name="q2" value="a"> eated</label>
+  <label class="block"><input type="radio" name="q2" value="b"> ate</label>
+</div>
 
-    <div id="p.3">
-      <p>3. Which is a question?</p>
-      <label class="block"><input type="radio" name="q3" value="a"> She is tired.</label>
-      <label class="block"><input type="radio" name="q3" value="b"> Is she tired?</label> 
-    </div>
+<div id="p.3">
+  <p>3. Which is a question?</p>
+  <label class="block"><input type="radio" name="q3" value="a"> She is tired.</label>
+  <label class="block"><input type="radio" name="q3" value="b"> Is she tired?</label> 
+</div>
 
-    <div id="p.4">             
-      <p>4. Identify the adverb in the sentence: "He ran quickly down the street."</p>
-      <label class="block"><input type="radio" name="q4" value="a"> He</label>
-      <label class="block"><input type="radio" name="q4" value="b"> ran</label>
-      <label class="block"><input type="radio" name="q4" value="c"> quickly</label>
-      <label class="block"><input type="radio" name="q4" value="d"> street</label>
-    </div>
+<div id="p.4">             
+  <p>4. Identify the adverb in the sentence: "He ran quickly down the street."</p>
+  <label class="block"><input type="radio" name="q4" value="a"> He</label>
+  <label class="block"><input type="radio" name="q4" value="b"> ran</label>
+  <label class="block"><input type="radio" name="q4" value="c"> quickly</label>
+  <label class="block"><input type="radio" name="q4" value="d"> street</label>
+</div>
 
-    <div id="p.5">
-      <p>5. Choose the pair of words that are synonyms:</p>
-      <label class="block"><input type="radio" name="q5" value="a"> happy / sad</label>
-      <label class="block"><input type="radio" name="q5" value="b"> large / small</label>
-      <label class="block"><input type="radio" name="q5" value="c"> joyful / elated</label>
-      <label class="block"><input type="radio" name="q5" value="d"> hot / cold</label>
-    </div>
+<div id="p.5">
+  <p>5. Choose the pair of words that are synonyms:</p>
+  <label class="block"><input type="radio" name="q5" value="a"> happy / sad</label>
+  <label class="block"><input type="radio" name="q5" value="b"> large / small</label>
+  <label class="block"><input type="radio" name="q5" value="c"> joyful / elated</label>
+  <label class="block"><input type="radio" name="q5" value="d"> hot / cold</label>
+</div>
 
-    <div id="p.6">
-      <p>6. Which sentence uses the correct form of "there," "their," or "they're"?</p>
-      <label class="block"><input type="radio" name="q6" value="a"> There going to the park.</label>
-      <label class="block"><input type="radio" name="q6" value="b"> Their dog is very friendly.</label>
-      <label class="block"><input type="radio" name="q6" value="c"> The book is over their.</label>
-      <label class="block"><input type="radio" name="q6" value="d"> There favorite color is blue.</label>
-    </div>
+<div id="p.6">
+  <p>6. Which sentence uses the correct form of "there," "their," or "they're"?</p>
+  <label class="block"><input type="radio" name="q6" value="a"> There going to the park.</label>
+  <label class="block"><input type="radio" name="q6" value="b"> Their dog is very friendly.</label>
+  <label class="block"><input type="radio" name="q6" value="c"> The book is over their.</label>
+  <label class="block"><input type="radio" name="q6" value="d"> There favorite color is blue.</label>
+</div>
 
-    <div id="p.7">
-      <p>7. What is the plural form of "cactus"?</p>
-      <label class="block"><input type="radio" name="q7" value="a"> cactuses</label>
-      <label class="block"><input type="radio" name="q7" value="b"> cacti</label>
-      <label class="block"><input type="radio" name="q7" value="c"> cactis</label>
-      <label class="block"><input type="radio" name="q7" value="d"> cacta</label>
-    </div>
+<div id="p.7">
+  <p>7. What is the plural form of "cactus"?</p>
+  <label class="block"><input type="radio" name="q7" value="a"> cactuses</label>
+  <label class="block"><input type="radio" name="q7" value="b"> cacti</label>
+  <label class="block"><input type="radio" name="q7" value="c"> cactis</label>
+  <label class="block"><input type="radio" name="q7" value="d"> cacta</label>
+</div>
 
-    <div id="p.8">
-      <p>8. Identify the preposition: "The cat jumped over the fence."</p>
-      <label class="block"><input type="radio" name="q8" value="a"> The</label>
-      <label class="block"><input type="radio" name="q8" value="b"> jumped</label>
-      <label class="block"><input type="radio" name="q8" value="c"> over</label>
-      <label class="block"><input type="radio" name="q8" value="d"> fence</label>
-    </div>
+<div id="p.8">
+  <p>8. Identify the preposition: "The cat jumped over the fence."</p>
+  <label class="block"><input type="radio" name="q8" value="a"> The</label>
+  <label class="block"><input type="radio" name="q8" value="b"> jumped</label>
+  <label class="block"><input type="radio" name="q8" value="c"> over</label>
+  <label class="block"><input type="radio" name="q8" value="d"> fence</label>
+</div>
 
-    <div id="p.9">
-      <p>9. Choose the sentence with correct punctuation:</p>
-      <label class="block"><input type="radio" name="q9" value="a"> Let's eat grandma!</label>
-      <label class="block"><input type="radio" name="q9" value="b"> Let's eat, grandma!</label>
-      <label class="block"><input type="radio" name="q9" value="c"> Lets eat grandma.</label>
-      <label class="block"><input type="radio" name="q9" value="d"> Lets eat, grandma.</label>
-    </div>
+<div id="p.9">
+  <p>9. Choose the sentence with correct punctuation:</p>
+  <label class="block"><input type="radio" name="q9" value="a"> Let's eat grandma!</label>
+  <label class="block"><input type="radio" name="q9" value="b"> Let's eat, grandma!</label>
+  <label class="block"><input type="radio" name="q9" value="c"> Lets eat grandma.</label>
+  <label class="block"><input type="radio" name="q9" value="d"> Lets eat, grandma.</label>
+</div>
 
-    <div id="p.10">
-      <p>10. Which of the following is a simile?</p>
-      <label class="block"><input type="radio" name="q10" value="a"> The wind whispered secrets.</label>
-      <label class="block"><input type="radio" name="q10" value="b"> He is a lion in battle.</label>
-      <label class="block"><input type="radio" name="q10" value="c"> She is as brave as a lion.</label>
-      <label class="block"><input type="radio" name="q10" value="d"> The rain was a curtain.</label>
-    </div>
-    
-    <button type="submit" class="mt-4 bg-blue-500 text-white p-2 rounded">Submit Quiz</button>
-  </form>
-</section>
-
+<div id="p.10">
+  <p>10. Which of the following is a simile?</p>
+  <label class="block"><input type="radio" name="q10" value="a"> The wind whispered secrets.</label>
+  <label class="block"><input type="radio" name="q10" value="b"> He is a lion in battle.</label>
+  <label class="block"><input type="radio" name="q10" value="c"> She is as brave as a lion.</label>
+  <label class="block"><input type="radio" name="q10" value="d"> The rain was a curtain.</label>
+</div>
 
               <button type="submit" class="bg-gradient-to-r from-indigo-500 to-purple-500 text-white px-4 py-2 rounded hover:scale-105 transition">Submit</button>
              </form>
@@ -473,33 +467,6 @@ button:hover {
      </footer>
  
      <script>
-      const nhost = new Nhost.NhostClient({
-  subdomain: 'your-nhost-subdomain',
-  region: 'your-region' // e.g., eu-west-1
-});
-      async function saveToNhost(userId, quizData) {
-  const { error, data } = await nhost.graphql.request(`
-    mutation InsertResult($user_id: uuid!, $data: jsonb!) {
-      insert_quiz_results(objects: {user_id: $user_id, data: $data}) {
-        affected_rows
-      }
-    }
-  `, {
-    user_id: userId,
-    data: quizData
-  });
-
-  if (error) {
-    console.error("Nhost error:", error);
-  } else {
-    console.log("Nhost sync success:", data);
-  }
-}
-      const nhost = new Nhost.NhostClient({
-  subdomain: 'your-subdomain',  // get from Nhost dashboard
-  region: 'your-region'         // like 'eu-west-1'
-});
-
          const translations = {
              en: {
                  "choose-language": "Choose your language:",
@@ -612,15 +579,49 @@ button:hover {
  
          document.getElementById('word').textContent = words[userWordIndex].word;
          document.getElementById('definition').textContent = words[userWordIndex].definition;
-import { NhostClient } from '@nhost/nhost-js'; // Import Nhost SDK (if using npm/yarn)
+const questionDivs = [
+  'p.1', 'p.2', 'p.3', 'p.4', 'p.5',
+  'p.6', 'p.7', 'p.8', 'p.9', 'p.10'
+];
+
+function displayWeeklyQuestion() {
+  const today = new Date();
+
+  // Set the custom "start" date to today (first week of questions)
+  const customStartDate = new Date(2025, 3, 25); // April 25, 2025 (Month is 0-indexed!)
+
+  const daysSinceStart = Math.floor((today - customStartDate) / (1000 * 60 * 60 * 24));
+  const currentWeek = Math.max(1, Math.ceil((daysSinceStart + 1) / 7)); // Never below week 1
+
+  if (currentWeek > questionDivs.length) {
+    console.log("All questions done!");
+    return; // Stop after 10 weeks
+  }
+
+  const currentId = questionDivs[currentWeek - 1]; // No modulo now! Just stop at 10
+
+  // Hide all question divs
+  questionDivs.forEach(id => {
+    const el = document.getElementById(id);
+    if (el) el.style.display = 'none';
+  });
+
+  // Show current week's div
+  const currentDiv = document.getElementById(currentId);
+  if (currentDiv) {
+    currentDiv.style.display = 'block';
+  } else {
+    console.warn(`Div with ID '${currentId}' not found.`);
+  }
+}
 
 document.addEventListener('DOMContentLoaded', () => {
-  displayWeeklyQuestion(); // Show correct weekly question
+  displayWeeklyQuestion();
 
   const quizForm = document.getElementById("quiz-form");
   if (!quizForm) return;
 
-  quizForm.addEventListener("submit", async function (e) {
+  quizForm.addEventListener("submit", function (e) {
     e.preventDefault();
 
     let correctAnswers = {
@@ -638,13 +639,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
     let score = 0;
     let total = 0;
-    let userAnswers = {};
 
     Object.keys(correctAnswers).forEach(q => {
       const selected = quizForm.querySelector(`input[name="${q}"]:checked`);
       const parentDiv = selected ? selected.closest("label") : null;
       if (selected && parentDiv) {
-        userAnswers[q] = selected.value;
         total++;
         if (selected.value === correctAnswers[q]) {
           score++;
@@ -669,65 +668,10 @@ document.addEventListener('DOMContentLoaded', () => {
       resultMessage.textContent = `😢 Keep learning! You're a Beginner 📘 (${score}/${total})`;
       resultMessage.style.color = "red";
     }
+
     quizForm.appendChild(resultMessage);
-
-    // Save to localStorage
-    localStorage.setItem('quizAnswers', JSON.stringify(userAnswers));
-
-    // Try to sync with Nhost (without authentication)
-    await saveToNhost(userAnswers); // Save to Nhost DB (no authentication needed)
   });
 });
-
-// Function to display weekly question (show only one per week)
-function displayWeeklyQuestion() {
-  const today = new Date();
-  const customStartDate = new Date(2025, 3, 26); // Start date: April 26, 2025 (current date)
-  const daysSinceStart = Math.floor((today - customStartDate) / (1000 * 60 * 60 * 24));
-  const currentWeek = Math.max(1, Math.ceil((daysSinceStart + 1) / 7)); // Ensure it's never below week 1
-
-  // Reset to 1 after 10 weeks (to match the number of questions)
-  const questionWeek = currentWeek > 10 ? 1 : currentWeek;
-
-  const currentId = `p.${questionWeek}`; // Get current week's ID
-
-  // Hide all questions
-  document.querySelectorAll("[id^='p.']").forEach((el) => {
-    el.style.display = 'none';
-  });
-
-  // Display the current week's question
-  const currentQuestionDiv = document.getElementById(currentId);
-  if (currentQuestionDiv) {
-    currentQuestionDiv.style.display = 'block';
-  } else {
-    console.error(`Question div with ID '${currentId}' not found.`);
-  }
-}
-
-// Function to save data to Nhost (no authentication needed)
-async function saveToNhost(quizData) {
-  const nhost = new NhostClient({
-    subdomain: 'tejidmxblscxgoicfvqk', // Replace with your Nhost subdomain
-    region: 'us-west-2', // Replace with your Nhost region (e.g., 'eu-west-1')
-  });
-
-  const { error, data } = await nhost.graphql.request(`
-    mutation InsertResult($data: jsonb!) {
-      insert_quiz_results(objects: { data: $data }) {
-        affected_rows
-      }
-    }
-  `, {
-    data: quizData
-  });
-
-  if (error) {
-    console.error("Nhost error:", error);
-  } else {
-    console.log("Nhost sync success:", data);
-  }
-}
 
            
     const vocabularyWords = [
@@ -768,11 +712,10 @@ async function saveToNhost(quizData) {
 
     shuffleWords(); // Shuffle at the beginning
   </script>
+</body>
+</html>
 
-  
- </script>
-   </body>
- </html>  
-
+     </script>
  </body>
+ 
  </html>
