@@ -586,12 +586,19 @@ button:hover {
 
 function displayWeeklyQuestion() {
   const today = new Date();
-  const yearStart = new Date(today.getFullYear(), 0, 1);
-  const daysSinceStart = Math.floor((today - yearStart) / (1000 * 60 * 60 * 24));
-  const currentWeek = Math.ceil((daysSinceStart + 1) / 7);
 
-  const questionIndex = (currentWeek - 1) % questionDivs.length;
-  const currentId = questionDivs[questionIndex];
+  // Set the custom "start" date to today (first week of questions)
+  const customStartDate = new Date(2025, 3, 25); // April 25, 2025 (Month is 0-indexed!)
+
+  const daysSinceStart = Math.floor((today - customStartDate) / (1000 * 60 * 60 * 24));
+  const currentWeek = Math.max(1, Math.ceil((daysSinceStart + 1) / 7)); // Never below week 1
+
+  if (currentWeek > questionDivs.length) {
+    console.log("All questions done!");
+    return; // Stop after 10 weeks
+  }
+
+  const currentId = questionDivs[currentWeek - 1]; // No modulo now! Just stop at 10
 
   // Hide all question divs
   questionDivs.forEach(id => {
@@ -610,8 +617,7 @@ function displayWeeklyQuestion() {
 
 document.addEventListener('DOMContentLoaded', displayWeeklyQuestion);
 
-      
-      
+           
     const vocabularyWords = [
       "apple", "ball", "cat", "dog", "egg", "fish", "goat", "hat", "ice", "jam",
       "kite", "lion", "moon", "nose", "orange", "pen", "queen", "rat", "sun", "top",
