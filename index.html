@@ -268,6 +268,7 @@ h1 {
   align-items: center;
   justify-content: center;
   margin-top: 15px;
+  width: 100%; /* Ensure container takes full width */
 }
 
 button {
@@ -280,12 +281,49 @@ button {
   cursor: pointer;
   transition: background-color 0.2s ease;
   font-size: 1rem;
-  width: 90%; /* mobile-friendly */
-  max-width: 300px; /* don't go too wide on desktops */
+  width: 90%; /* Take up most of the container width */
+  max-width: 300px; /* Limit width on larger screens */
 }
 
 button:hover {
   background-color: #ff85c1; /* lighter pink on hover */
+}
+
+/* Media query for tablets and larger screens */
+@media (min-width: 600px) {
+  .button-container {
+    flex-direction: row; /* Arrange buttons horizontally */
+    justify-content: center; /* Space them out */
+  }
+
+  button {
+    width: auto; /* Allow buttons to size based on content */
+    margin: 10px 15px; /* Add horizontal spacing */
+    min-width: 150px; /* Ensure buttons don't get too small */
+  }
+
+  #wordDisplay {
+    font-size: 2.5rem; /* Slightly larger text on bigger screens */
+    margin: 30px auto; /* Center and add more margin */
+    max-width: 600px; /* Limit the width of the word display */
+  }
+
+  h1 {
+    font-size: 4rem; /* Larger title on bigger screens */
+    margin-bottom: 30px;
+  }
+}
+
+/* Media query for even larger desktop screens */
+@media (min-width: 992px) {
+  #wordDisplay {
+    font-size: 3rem; /* Even larger text on desktops */
+    max-width: 700px;
+  }
+
+  h1 {
+    font-size: 5rem;
+  }
 }
 
 
