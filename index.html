@@ -612,6 +612,8 @@ button:hover {
  
          document.getElementById('word').textContent = words[userWordIndex].word;
          document.getElementById('definition').textContent = words[userWordIndex].definition;
+import { NhostClient } from '@nhost/nhost-js'; // Import Nhost SDK (if using npm/yarn)
+
 document.addEventListener('DOMContentLoaded', () => {
   displayWeeklyQuestion(); // Show correct weekly question
 
@@ -680,11 +682,11 @@ document.addEventListener('DOMContentLoaded', () => {
 // Function to display weekly question (show only one per week)
 function displayWeeklyQuestion() {
   const today = new Date();
-  const customStartDate = new Date(2025, 3, 25); // Start date: April 25, 2025
+  const customStartDate = new Date(2025, 3, 26); // Start date: April 26, 2025 (current date)
   const daysSinceStart = Math.floor((today - customStartDate) / (1000 * 60 * 60 * 24));
   const currentWeek = Math.max(1, Math.ceil((daysSinceStart + 1) / 7)); // Ensure it's never below week 1
 
-  // Reset to 1 after 10 weeks
+  // Reset to 1 after 10 weeks (to match the number of questions)
   const questionWeek = currentWeek > 10 ? 1 : currentWeek;
 
   const currentId = `p.${questionWeek}`; // Get current week's ID
@@ -695,19 +697,24 @@ function displayWeeklyQuestion() {
   });
 
   // Display the current week's question
-  document.getElementById(currentId).style.display = 'block';
+  const currentQuestionDiv = document.getElementById(currentId);
+  if (currentQuestionDiv) {
+    currentQuestionDiv.style.display = 'block';
+  } else {
+    console.error(`Question div with ID '${currentId}' not found.`);
+  }
 }
 
 // Function to save data to Nhost (no authentication needed)
 async function saveToNhost(quizData) {
-  const nhost = new Nhost.NhostClient({
-    subdomain: 'your-nhost-subdomain',
-    region: 'your-region', // e.g., eu-west-1
+  const nhost = new NhostClient({
+    subdomain: 'tejidmxblscxgoicfvqk', // Replace with your Nhost subdomain
+    region: 'us-west-2', // Replace with your Nhost region (e.g., 'eu-west-1')
   });
 
   const { error, data } = await nhost.graphql.request(`
     mutation InsertResult($data: jsonb!) {
-      insert_quiz_results(objects: {data: $data}) {
+      insert_quiz_results(objects: { data: $data }) {
         affected_rows
       }
     }
