@@ -473,13 +473,17 @@ button:hover {
   📜
 </button>
 
-<!-- History Pop-up -->
-<div id="historyBox" style="display: none; position: fixed; bottom: 80px; right: 20px; background: #111827; color: white; padding: 1.2rem; border-radius: 1rem; max-width: 250px; box-shadow: 0 0 20px hotpink; font-family: 'Orbitron', sans-serif;">
-  <p>👾 Hey there! Catch up with your scores! 💪✨</p>
-  <p id="quizResult">📘 Quiz: N/A</p>
-  <p id="vocabScore">🧠 Vocab Game: N/A</p>
-  <p id="languageChoice">🈯 Language: N/A</p>
+<!-- History Button -->
+<button id="historyBtn" title="History" style="background: pink; border-radius: 50%; padding: 12px; box-shadow: 0 0 10px hotpink; font-size: 1.5rem; border: none; cursor: pointer;">
+  📜
+</button>
+
+<!-- History Box -->
+<div id="historyBox" style="display: none; position: fixed; bottom: 80px; right: 20px; background: #111827; color: white; padding: 1.2rem; border-radius: 1rem; max-width: 250px; box-shadow: 0 0 20px hotpink; font-family: 'Orbitron', sans-serif; overflow-y: auto; max-height: 400px;">
+  <p style="font-size: 1rem;">👾 Hey there! Catch up with your scores! 💪✨</p>
+  <div id="historyLog"></div> <!-- Here user history will appear -->
 </div>
+
 
 
          <section id="daily-word" class="mb-8 bg-white dark:bg-gray-800 p-4 rounded-lg shadow-md hover:scale-105 transition-all duration-500 ease-in-out">
@@ -1021,38 +1025,73 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 });
-                 // Function to save user data
-function saveUserData(quizScore, vocabScore, language) {
-  localStorage.setItem('quizResult', quizScore);
-  localStorage.setItem('vocabScore', vocabScore);
-  localStorage.setItem('languageChoice', language);
+// Initialize
+const historyBtn = document.getElementById('historyBtn');
+const historyBox = document.getElementById('historyBox');
+const historyLog = document.getElementById('historyLog');
+
+// Load History
+function loadUserHistory() {
+  const userHistory = JSON.parse(localStorage.getItem('userHistory')) || [];
+  historyLog.innerHTML = '';
+
+  userHistory.forEach(item => {
+    const p = document.createElement('p');
+    p.innerHTML = item;
+    historyLog.appendChild(p);
+  });
 }
 
-// Function to load and display data
-function loadUserData() {
-  const quiz = localStorage.getItem('quizResult') || "N/A";
-  const vocab = localStorage.getItem('vocabScore') || "N/A";
-  const lang = localStorage.getItem('languageChoice') || "N/A";
+// Save new entry
+function saveUserEntry(entry) {
+  let userHistory = JSON.parse(localStorage.getItem('userHistory')) || [];
 
-  document.getElementById('quizResult').textContent = `📘 Quiz: ${quiz}`;
-  document.getElementById('vocabScore').textContent = `🧠 Vocab Game: ${vocab}`;
-  document.getElementById('languageChoice').textContent = `🈯 Language: ${lang}`;
+  // Add new entry
+  userHistory.push(entry);
+
+  // Limit to 15 entries
+  if (userHistory.length > 15) {
+    userHistory.shift(); // remove oldest
+  }
+
+  // Save back to localStorage
+  localStorage.setItem('userHistory', JSON.stringify(userHistory));
 }
 
-// Toggle the history box on button click
-document.getElementById('historyBtn').addEventListener('click', () => {
-  const box = document.getElementById('historyBox');
-  if (box.style.display === 'none') {
-    loadUserData();
-    box.style.display = 'block';
+// Click to open/close History
+historyBtn.addEventListener('click', () => {
+  if (historyBox.style.display === 'none') {
+    loadUserHistory();
+    historyBox.style.display = 'block';
   } else {
-    box.style.display = 'none';
+    historyBox.style.display = 'none';
   }
 });
 
-// Example usage — replace these with your real quiz logic
-// saveUserData("80%", "15 pts", "French");
+// ==========================
+// Now ready to save real data!
+// ==========================
 
-  </script>
+// 1. Save Language Selection
+function userSelectedLanguage(language) {
+  const emojis = {
+    "French": "🇫🇷",
+    "English": "EN",
+    "Arabic": "AR",
+    "Spanish": "🇪🇸"
+  };
+  saveUserEntry(`🈯 Selected Language: ${language} ${emojis[language] || ''}`);
+}
+
+// 2. Save  Proficiency Quiz Score (ex: 🌸 Red Flower or hat🎓)
+function saveVocabGameResult(result) {
+  saveUserEntry(`🧠 Proficiency Quiz Score: ${result}`);
+}
+
+// 3. Save Vocabulary Game Score
+function saveQuizResult(score) {
+  saveUserEntry(`📘 Vocabulary Game Score: ${score}`);
+}
+</script>
  </body>
  </html>
