@@ -579,7 +579,7 @@ button:hover {
  
          document.getElementById('word').textContent = words[userWordIndex].word;
          document.getElementById('definition').textContent = words[userWordIndex].definition;
- const questionDivs = [
+const questionDivs = [
   'p.1', 'p.2', 'p.3', 'p.4', 'p.5',
   'p.6', 'p.7', 'p.8', 'p.9', 'p.10'
 ];
@@ -615,7 +615,63 @@ function displayWeeklyQuestion() {
   }
 }
 
-document.addEventListener('DOMContentLoaded', displayWeeklyQuestion);
+document.addEventListener('DOMContentLoaded', () => {
+  displayWeeklyQuestion();
+
+  const quizForm = document.getElementById("quiz-form");
+  if (!quizForm) return;
+
+  quizForm.addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    let correctAnswers = {
+      q1: "b",
+      q2: "b",
+      q3: "b",
+      q4: "c",
+      q5: "c",
+      q6: "b",
+      q7: "b",
+      q8: "c",
+      q9: "b",
+      q10: "c",
+    };
+
+    let score = 0;
+    let total = 0;
+
+    Object.keys(correctAnswers).forEach(q => {
+      const selected = quizForm.querySelector(`input[name="${q}"]:checked`);
+      const parentDiv = selected ? selected.closest("label") : null;
+      if (selected && parentDiv) {
+        total++;
+        if (selected.value === correctAnswers[q]) {
+          score++;
+          parentDiv.innerHTML += " 🌸"; // Green flower for correct
+          parentDiv.style.color = "green";
+        } else {
+          parentDiv.innerHTML += " 🌹"; // Red flower for wrong
+          parentDiv.style.color = "red";
+        }
+      }
+    });
+
+    const resultMessage = document.createElement("p");
+    resultMessage.className = "mt-4 font-bold";
+    if (score === total) {
+      resultMessage.textContent = `✨ Perfect! You're Advanced! 🎓 (${score}/${total})`;
+      resultMessage.style.color = "green";
+    } else if (score >= total / 2) {
+      resultMessage.textContent = `👍 Not bad! You're Intermediate 🌟 (${score}/${total})`;
+      resultMessage.style.color = "orange";
+    } else {
+      resultMessage.textContent = `😢 Keep learning! You're a Beginner 📘 (${score}/${total})`;
+      resultMessage.style.color = "red";
+    }
+
+    quizForm.appendChild(resultMessage);
+  });
+});
 
            
     const vocabularyWords = [
