@@ -393,26 +393,37 @@ button:hover {
   margin-bottom: 10px;
   color: #ff3c78;
 }
-  /* Dark Theme */
+ /* Example CSS for themes */
+:root {
+    --background-color: white;
+    --text-color: black;
+}
+
 .dark {
-    background-color: #121212;
-    color: white;
+    --background-color: #333;
+    --text-color: white;
 }
 
-/* Purple Theme */
-.red {
-    background-color: #8B0000; /* Deep red */
-    color: #ffffff;
+.purple {
+    --background-color: #9b59b6;
+    --text-color: white;
 }
 
-/* Red-Pink Theme */
 .redpink {
-    background: linear-gradient(135deg, #ff4e50, #f9d423); /* Red-Pinkish vibe */
-    color: #000000;
+    --background-color: #ff69b4;
+    --text-color: white;
 }
 
-/* Light Theme is your normal default, no extra class needed */
-  <style>
+.light {
+    --background-color: white;
+    --text-color: black;
+}
+
+body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
 /* Glowing Cyberpunk Button */
 .glow-btn {
   width: 50px;
