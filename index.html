@@ -407,8 +407,8 @@ button:hover {
 }
 
 /* Purple Theme */
-.purple {
-    background-color: #6a0dad; /* Deep purple */
+.red {
+    background-color: #8B0000; /* Deep red */
     color: #ffffff;
 }
 
@@ -476,8 +476,19 @@ button:hover {
 </button>
 
 <!-- History Box -->
-<div id="historyBox" style="display: none; position: fixed; bottom: 80px; right: 20px; background: #111827; color: white; padding: 1.2rem; border-radius: 1rem; max-width: 250px; box-shadow: 0 0 20px hotpink; font-family: 'Orbitron', sans-serif; overflow-y: auto; max-height: 400px;">
-  <p style="font-size: 1rem;">👾 Hey there! Catch up with your scores! 💪✨</p>
+<button id="historyButton" style="
+    background: transparent; 
+    border: none; 
+    font-size: 2rem; 
+    cursor: pointer; 
+    position: fixed; 
+    bottom: 20px; 
+    right: 20px; 
+    z-index: 1000; 
+    filter: drop-shadow(0 0 5px hotpink); 
+">
+</button>
+👾 Hey there! Catch up with your scores! 💪✨</p>
   <div id="historyLog"></div> <!-- Here user history will appear -->
 </div>
 
