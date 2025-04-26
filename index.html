@@ -354,7 +354,7 @@ button:hover {
                      <label class="block"><input type="radio" name="q3" value="a"> She is tired.</label>
                      <label class="block"><input type="radio" name="q3" value="b"> Is she tired?</label>
                  </div>
-              <div>
+              <div id="question4">
   <p>4. Identify the adverb in the following sentence: "He ran quickly down the street."</p>
   <label class="block"><input type="radio" name="q4" value="a"> He</label>
   <label class="block"><input type="radio" name="q4" value="b"> ran</label>
@@ -362,7 +362,7 @@ button:hover {
   <label class="block"><input type="radio" name="q4" value="d"> street</label>
 </div>
 
-<div>
+<div id="question5">
   <p>5. Choose the pair of words that are synonyms:</p>
   <label class="block"><input type="radio" name="q5" value="a"> happy / sad</label>
   <label class="block"><input type="radio" name="q5" value="b"> large / small</label>
@@ -370,7 +370,7 @@ button:hover {
   <label class="block"><input type="radio" name="q5" value="d"> hot / cold</label>
 </div>
 
-<div>
+<div id="question6">
   <p>6. Which sentence uses the correct form of "there," "their," or "they're"?</p>
   <label class="block"><input type="radio" name="q6" value="a"> There going to the park.</label>
   <label class="block"><input type="radio" name="q6" value="b"> Their dog is very friendly.</label>
@@ -378,7 +378,7 @@ button:hover {
   <label class="block"><input type="radio" name="q6" value="d"> There favorite color is blue.</label>
 </div>
 
-<div>
+<div id="question7">
   <p>7. What is the plural form of "cactus"?</p>
   <label class="block"><input type="radio" name="q7" value="a"> cactuses</label>
   <label class="block"><input type="radio" name="q7" value="b"> cacti</label>
@@ -386,7 +386,7 @@ button:hover {
   <label class="block"><input type="radio" name="q7" value="d"> cacta</label>
 </div>
 
-<div>
+<div id="question8">
   <p>8. Identify the preposition in the sentence: "The cat jumped over the fence."</p>
   <label class="block"><input type="radio" name="q8" value="a"> The</label>
   <label class="block"><input type="radio" name="q8" value="b"> jumped</label>
@@ -394,7 +394,7 @@ button:hover {
   <label class="block"><input type="radio" name="q8" value="d"> fence</label>
 </div>
 
-<div>
+<div id="question9">
   <p>9. Choose the sentence with correct punctuation:</p>
   <label class="block"><input type="radio" name="q9" value="a"> Let's eat grandma!</label>
   <label class="block"><input type="radio" name="q9" value="b"> Let's eat, grandma!</label>
@@ -402,14 +402,14 @@ button:hover {
   <label class="block"><input type="radio" name="q9" value="d"> Lets eat, grandma.</label>
 </div>
 
-<div>
+<div id="question10">
   <p>10. Which of the following is a simile?</p>
   <label class="block"><input type="radio" name="q10" value="a"> The wind whispered secrets.</label>
   <label class="block"><input type="radio" name="q10" value="b"> He is a lion in battle.</label>
   <label class="block"><input type="radio" name="q10" value="c"> She is as brave as a lion.</label>
   <label class="block"><input type="radio" name="q10" value="d"> The rain was a curtain.</label>
 </div>
-                 <button type="submit" class="bg-gradient-to-r from-indigo-500 to-purple-500 text-white px-4 py-2 rounded hover:scale-105 transition">Submit</button>
+              <button type="submit" class="bg-gradient-to-r from-indigo-500 to-purple-500 text-white px-4 py-2 rounded hover:scale-105 transition">Submit</button>
              </form>
              <div id="quiz-result" class="mt-4 text-xl font-bold text-pink-600 dark:text-pink-300"></div>
          </section>
@@ -576,130 +576,43 @@ button:hover {
          document.getElementById('word').textContent = words[userWordIndex].word;
          document.getElementById('definition').textContent = words[userWordIndex].definition;
  
-         document.getElementById('quiz-form').addEventListener('submit', function (e) {
-             e.preventDefault();
-             const correctAnswers = {
-                 q1: 'b',
-                 q2: 'b',
-                 q3: 'b'
-             };
-             let score = 0;
-             for (const [question, answer] of Object.entries(correctAnswers)) {
-                 const selected = document.querySelector(`input[name="${question}"]:checked`);
-                 if (selected && selected.value === answer) {
-                     score++;
-                 }
-             }
-             let result = '';
-             if (score === 3) result = 'Level: Advanced 🚀';
-             else if (score >= 1) result = 'Level: Intermediate 💪';
-             else result = 'Level: Beginner 🌱';
-             document.getElementById('quiz-result').textContent = result;
-         });
- 
-         document.getElementById('contact-form').addEventListener('submit', async function (e) {
-             e.preventDefault();
-             const form = e.target;
-             const formMsg = document.getElementById('form-msg');
-             const formData = new FormData(form);
- 
-             const response = await fetch('https://formspree.io/f/xdkebenj', {
-                 method: 'POST',
-                 headers: {
-                     'Accept': 'application/json'
-                 },
-                 body: formData
-             });
- 
-             if (response.ok) {
-                 form.reset();
-                 formMsg.classList.remove('hidden');
-             }
-         });
-      const quizQuestions = [
-  `
-    <p>1. Choose the correct sentence:</p>
-    <label class="block"><input type="radio" name="q1" value="a"> She go to school.</label>
-    <label class="block"><input type="radio" name="q1" value="b"> She goes to school.</label>
-  `,
-  `
-    <p>2. What is the past tense of 'eat'?</p>
-    <label class="block"><input type="radio" name="q2" value="a"> eated</label>
-    <label class="block"><input type="radio" name="q2" value="b"> ate</label>
-  `,
-  `
-    <p>10. Which of the following is a simile?</p>
-    <label class="block"><input type="radio" name="q10" value="a"> The wind whispered secrets.</label>
-    <label class="block"><input type="radio" name="q10" value="b"> He is a lion in battle.</label>
-    <label class="block"><input type="radio" name="q10" value="c"> She is as brave as a lion.</label>
-    <label class="block"><input type="radio" name="q10" value="d"> The rain was a curtain.</label>
-
-    
-  <p>5. Choose the pair of words that are synonyms:</p>
-  <label class="block"><input type="radio" name="q5" value="a"> happy / sad</label>
-  <label class="block"><input type="radio" name="q5" value="b"> large / small</label>
-  <label class="block"><input type="radio" name="q5" value="c"> joyful / elated</label>
-  <label class="block"><input type="radio" name="q5" value="d"> hot / cold</label>
-
-
-
-  <p>6. Which sentence uses the correct form of "there," "their," or "they're"?</p>
-  <label class="block"><input type="radio" name="q6" value="a"> There going to the park.</label>
-  <label class="block"><input type="radio" name="q6" value="b"> Their dog is very friendly.</label>
-  <label class="block"><input type="radio" name="q6" value="c"> The book is over their.</label>
-  <label class="block"><input type="radio" name="q6" value="d"> There favorite color is blue.</label>
-
-
-
-  <p>7. What is the plural form of "cactus"?</p>
-  <label class="block"><input type="radio" name="q7" value="a"> cactuses</label>
-  <label class="block"><input type="radio" name="q7" value="b"> cacti</label>
-  <label class="block"><input type="radio" name="q7" value="c"> cactis</label>
-  <label class="block"><input type="radio" name="q7" value="d"> cacta</label>
-
-  <p>8. Identify the preposition in the sentence: "The cat jumped over the fence."</p>
-  <label class="block"><input type="radio" name="q8" value="a"> The</label>
-  <label class="block"><input type="radio" name="q8" value="b"> jumped</label>
-  <label class="block"><input type="radio" name="q8" value="c"> over</label>
-  <label class="block"><input type="radio" name="q8" value="d"> fence</label>
-
-
-
-  <p>9. Choose the sentence with correct punctuation:</p>
-  <label class="block"><input type="radio" name="q9" value="a"> Let's eat grandma!</label>
-  <label class="block"><input type="radio" name="q9" value="b"> Let's eat, grandma!</label>
-  <label class="block"><input type="radio" name="q9" value="c"> Lets eat grandma.</label>
-  <label class="block"><input type="radio" name="q9" value="d"> Lets eat, grandma.</label>
-
-
-
-  <p>10. Which of the following is a simile?</p>
-  <label class="block"><input type="radio" name="q10" value="a"> The wind whispered secrets.</label>
-  <label class="block"><input type="radio" name="q10" value="b"> He is a lion in battle.</label>
-  <label class="block"><input type="radio" name="q10" value="c"> She is as brave as a lion.</label>
-  <label class="block"><input type="radio" name="q10" value="d"> The rain was a curtain.</label>
-
-  `
+    const questionDivs = [
+  'question4',
+  'question5',
+  'question6',
+  'question7',
+  'question8',
+  'question9',
+  'question10'
 ];
 
 function displayWeeklyQuestion() {
-  const questionContainer = document.getElementById('weeklyQuestionContainer'); // Make sure you have a div with this ID in your HTML
+  const currentDate = new Date();
+  const startOfYear = new Date(currentDate.getFullYear(), 0, 1);
+  const days = Math.floor((currentDate - startOfYear) / (24 * 60 * 60 * 1000));
+  const weekNumber = Math.ceil((days + 1) / 7);
+  const questionIndex = (weekNumber - 1) % questionDivs.length;
+  const currentQuestionId = questionDivs[questionIndex];
 
-  if (questionContainer && quizQuestions.length > 0) {
-    const currentDate = new Date();
-    const startOfYear = new Date(currentDate.getFullYear(), 0, 1);
-    const days = Math.floor((currentDate - startOfYear) / (24 * 60 * 60 * 1000));
-    const weekNumber = Math.ceil((days + 1) / 7);
+  // Hide all question divs
+  questionDivs.forEach(id => {
+    const div = document.getElementById(id);
+    if (div) {
+      div.style.display = 'none';
+    }
+  });
 
-    const questionIndex = (weekNumber - 1) % quizQuestions.length; // Cycle through questions
-    questionContainer.innerHTML = quizQuestions[questionIndex];
+  // Show the question div for the current week
+  const currentQuestionDiv = document.getElementById(currentQuestionId);
+  if (currentQuestionDiv) {
+    currentQuestionDiv.style.display = 'block';
   } else {
-    console.error("Question container not found or no questions available.");
+    console.error(`Question div with ID '${currentQuestionId}' not found.`);
   }
 }
 
-// Call this function when your page loads
 document.addEventListener('DOMContentLoaded', displayWeeklyQuestion);
+      
       
     const vocabularyWords = [
       "apple", "ball", "cat", "dog", "egg", "fish", "goat", "hat", "ice", "jam",
