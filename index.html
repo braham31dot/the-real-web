@@ -827,6 +827,66 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 });
+                 document.addEventListener('DOMContentLoaded', () => {
+  // Language Selection Logic
+  const languageBtns = document.querySelectorAll('#language-selection button');
+  languageBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const selectedLanguage = btn.textContent;
+      localStorage.setItem('selectedLanguage', selectedLanguage);
+      console.log(`Selected language: ${selectedLanguage}`);
+    });
+  });
+
+  // Proficiency Quiz Logic
+  const quizForm = document.getElementById('quiz-form');
+  quizForm.addEventListener('submit', function (e) {
+    e.preventDefault();
+
+    const answers = {
+      q1: quizForm.querySelector('input[name="q1"]:checked')?.value,
+      q2: quizForm.querySelector('input[name="q2"]:checked')?.value,
+    };
+
+    localStorage.setItem('quizAnswers', JSON.stringify(answers));
+    console.log('Quiz answers saved locally:', answers);
+  });
+
+  // Vocabulary Game Logic
+  const startGameBtn = document.getElementById('start-game');
+  startGameBtn.addEventListener('click', () => {
+    const gameData = {
+      progress: 'level1',
+      score: 0,
+    };
+
+    localStorage.setItem('vocabularyGameData', JSON.stringify(gameData));
+    console.log('Game data saved locally:', gameData);
+  });
+
+  // Load saved data (if any)
+  loadSavedData();
+});
+
+function loadSavedData() {
+  // Load saved language selection
+  const savedLanguage = localStorage.getItem('selectedLanguage');
+  if (savedLanguage) {
+    console.log('Loaded language:', savedLanguage);
+  }
+
+  // Load saved quiz answers
+  const savedQuizAnswers = JSON.parse(localStorage.getItem('quizAnswers'));
+  if (savedQuizAnswers) {
+    console.log('Loaded quiz answers:', savedQuizAnswers);
+  }
+
+  // Load saved vocabulary game data
+  const savedGameData = JSON.parse(localStorage.getItem('vocabularyGameData'));
+  if (savedGameData) {
+    console.log('Loaded game data:', savedGameData);
+  }
+}
 </script>
  </body>
  </html>
