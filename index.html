@@ -616,6 +616,90 @@ button:hover {
                  formMsg.classList.remove('hidden');
              }
          });
+      const quizQuestions = [
+  `
+    <p>1. Choose the correct sentence:</p>
+    <label class="block"><input type="radio" name="q1" value="a"> She go to school.</label>
+    <label class="block"><input type="radio" name="q1" value="b"> She goes to school.</label>
+  `,
+  `
+    <p>2. What is the past tense of 'eat'?</p>
+    <label class="block"><input type="radio" name="q2" value="a"> eated</label>
+    <label class="block"><input type="radio" name="q2" value="b"> ate</label>
+  `,
+  `
+    <p>10. Which of the following is a simile?</p>
+    <label class="block"><input type="radio" name="q10" value="a"> The wind whispered secrets.</label>
+    <label class="block"><input type="radio" name="q10" value="b"> He is a lion in battle.</label>
+    <label class="block"><input type="radio" name="q10" value="c"> She is as brave as a lion.</label>
+    <label class="block"><input type="radio" name="q10" value="d"> The rain was a curtain.</label>
+
+    
+  <p>5. Choose the pair of words that are synonyms:</p>
+  <label class="block"><input type="radio" name="q5" value="a"> happy / sad</label>
+  <label class="block"><input type="radio" name="q5" value="b"> large / small</label>
+  <label class="block"><input type="radio" name="q5" value="c"> joyful / elated</label>
+  <label class="block"><input type="radio" name="q5" value="d"> hot / cold</label>
+
+
+
+  <p>6. Which sentence uses the correct form of "there," "their," or "they're"?</p>
+  <label class="block"><input type="radio" name="q6" value="a"> There going to the park.</label>
+  <label class="block"><input type="radio" name="q6" value="b"> Their dog is very friendly.</label>
+  <label class="block"><input type="radio" name="q6" value="c"> The book is over their.</label>
+  <label class="block"><input type="radio" name="q6" value="d"> There favorite color is blue.</label>
+
+
+
+  <p>7. What is the plural form of "cactus"?</p>
+  <label class="block"><input type="radio" name="q7" value="a"> cactuses</label>
+  <label class="block"><input type="radio" name="q7" value="b"> cacti</label>
+  <label class="block"><input type="radio" name="q7" value="c"> cactis</label>
+  <label class="block"><input type="radio" name="q7" value="d"> cacta</label>
+
+  <p>8. Identify the preposition in the sentence: "The cat jumped over the fence."</p>
+  <label class="block"><input type="radio" name="q8" value="a"> The</label>
+  <label class="block"><input type="radio" name="q8" value="b"> jumped</label>
+  <label class="block"><input type="radio" name="q8" value="c"> over</label>
+  <label class="block"><input type="radio" name="q8" value="d"> fence</label>
+
+
+
+  <p>9. Choose the sentence with correct punctuation:</p>
+  <label class="block"><input type="radio" name="q9" value="a"> Let's eat grandma!</label>
+  <label class="block"><input type="radio" name="q9" value="b"> Let's eat, grandma!</label>
+  <label class="block"><input type="radio" name="q9" value="c"> Lets eat grandma.</label>
+  <label class="block"><input type="radio" name="q9" value="d"> Lets eat, grandma.</label>
+
+
+
+  <p>10. Which of the following is a simile?</p>
+  <label class="block"><input type="radio" name="q10" value="a"> The wind whispered secrets.</label>
+  <label class="block"><input type="radio" name="q10" value="b"> He is a lion in battle.</label>
+  <label class="block"><input type="radio" name="q10" value="c"> She is as brave as a lion.</label>
+  <label class="block"><input type="radio" name="q10" value="d"> The rain was a curtain.</label>
+
+  `
+];
+
+function displayWeeklyQuestion() {
+  const questionContainer = document.getElementById('weeklyQuestionContainer'); // Make sure you have a div with this ID in your HTML
+
+  if (questionContainer && quizQuestions.length > 0) {
+    const currentDate = new Date();
+    const startOfYear = new Date(currentDate.getFullYear(), 0, 1);
+    const days = Math.floor((currentDate - startOfYear) / (24 * 60 * 60 * 1000));
+    const weekNumber = Math.ceil((days + 1) / 7);
+
+    const questionIndex = (weekNumber - 1) % quizQuestions.length; // Cycle through questions
+    questionContainer.innerHTML = quizQuestions[questionIndex];
+  } else {
+    console.error("Question container not found or no questions available.");
+  }
+}
+
+// Call this function when your page loads
+document.addEventListener('DOMContentLoaded', displayWeeklyQuestion);
       
     const vocabularyWords = [
       "apple", "ball", "cat", "dog", "egg", "fish", "goat", "hat", "ice", "jam",
