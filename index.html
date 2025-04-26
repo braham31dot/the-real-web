@@ -231,8 +231,8 @@
    }
   body {
   font-family: "Segoe UI", sans-serif;
-  background-color: #f8f6ff; /* soft white background */
-  color: #5c2d91; /* deep purple text */
+  background-color: #f8f6ff; /* soft white */
+  color: #000; /* default text color */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -242,35 +242,43 @@
 }
 
 h1 {
-  color: #7f3fbf;
+  color: #d63384; /* nice pink title */
+  margin-bottom: 10px;
 }
 
 #wordDisplay {
   font-size: 2rem;
   margin: 20px;
   font-weight: bold;
-  color: #5c2d91;
+  color: black;
+  background-color: white;
+  padding: 20px 30px;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(214, 51, 132, 0.3); /* soft pink glow */
+  text-align: center;
+  min-width: 200px;
 }
 
 button {
-  background-color: #7f3fbf;
+  background-color: #ff69b4; /* hot pink */
   color: white;
   border: none;
   padding: 12px 20px;
-  margin: 10px;
-  border-radius: 8px;
+  margin: 10px 5px;
+  border-radius: 10px;
   cursor: pointer;
-  transition: background-color 0.2s;
+  transition: background-color 0.2s ease;
   font-size: 1rem;
 }
 
 button:hover {
-  background-color: #a084ca;
+  background-color: #ff85c1; /* lighter pink on hover */
 }
 
 #scoreDisplay {
   font-size: 1.2rem;
-  margin-top: 10px;
+  margin-top: 15px;
+  color: #333;
 }
 
  </style>
