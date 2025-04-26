@@ -38,38 +38,71 @@
      <style>
     
          /* Make the header items stack and become centered on small screens */
-         @media (max-width: 640px) {
-             header {
-                 padding: 1.5rem;
-             }
- 
-             h1.text-3xl {
-                 font-size: 1.5rem;
-                 text-align: center;
-             }
- 
-             .flex-wrap {
-                 flex-direction: column;
-                 align-items: center;
-                 justify-content: center;
-             }
- 
-             .flex button {
-                 margin-bottom: 0.5rem; /* Add some space between buttons */
-                 width: 80%; /* Make buttons take more space on smaller screens */
-             }
- 
-             .gap-2 {
-                 gap: 1rem; /* Increased gap between buttons for mobile */
-             }
-         }
- 
-         /* For tablets or larger devices, make sure the header items look balanced */
-         @media (min-width: 641px) {
-             .flex-wrap {
-                 flex-direction: row;
-             }
-         }
+        /* Base styles for header */
+header {
+  padding: 1.5rem 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #1a1a1a;
+  color: #fff;
+  text-align: center;
+}
+
+/* Title styling */
+h1.text-3xl {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  font-family: 'Orbitron', sans-serif;
+}
+
+/* Flex container for buttons */
+.flex-wrap {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  gap: 0.5rem;
+  justify-content: center;
+  width: 100%;
+  padding-bottom: 0.5rem;
+}
+
+/* Button styling */
+.flex button,
+.cta-button {
+  padding: 0.6rem 1.2rem;
+  font-size: 0.9rem;
+  border-radius: 10px;
+  white-space: nowrap;
+  flex-shrink: 0;
+  background-color: #ff88a0;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-family: 'Orbitron', sans-serif;
+  transition: all 0.3s ease;
+}
+
+.flex button:hover,
+.cta-button:hover {
+  background-color: #f16a6a;
+  transform: scale(1.03);
+}
+
+.flex button:active,
+.cta-button:active {
+  background-color: #d24c5a;
+}
+
+/* Scrollbar hide (optional but makes it look cleaner on phones) */
+.flex-wrap::-webkit-scrollbar {
+  display: none;
+}
+.flex-wrap {
+  -ms-overflow-style: none;  /* IE/Edge */
+  scrollbar-width: none;     /* Firefox */
+}
+
      </style>
  </body>
     
