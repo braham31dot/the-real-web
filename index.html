@@ -471,12 +471,7 @@ button:hover {
 
 
 <!-- History Button -->
-<button id="historyBtn" title="History" style="background: pink; border-radius: 50%; padding: 12px; box-shadow: 0 0 10px hotpink; font-size: 1.5rem; border: none; cursor: pointer;">
-  📜
-</button>
-
-<!-- History Box -->
-<button id="historyButton" style="
+<button id="historyButton" title="History" style="
     background: transparent; 
     border: none; 
     font-size: 2rem; 
@@ -485,14 +480,32 @@ button:hover {
     bottom: 20px; 
     right: 20px; 
     z-index: 1000; 
-    filter: drop-shadow(0 0 5px hotpink); 
+    filter: drop-shadow(0 0 8px hotpink); 
+    transition: transform 0.3s ease;
 ">
+  📜
 </button>
+
+<!-- History Box -->
+<div id="historyBox" style="
+    display: none; 
+    position: fixed; 
+    bottom: 80px; 
+    right: 20px; 
+    background: #111827; 
+    color: white; 
+    padding: 1.2rem; 
+    border-radius: 1rem; 
+    max-width: 250px; 
+    box-shadow: 0 0 20px hotpink; 
+    font-family: 'Orbitron', sans-serif; 
+    overflow-y: auto; 
+    max-height: 400px; 
+    z-index: 999;
+">
 👾 Hey there! Catch up with your scores! 💪✨</p>
   <div id="historyLog"></div> <!-- Here user history will appear -->
 </div>
-
-
 
          <section id="daily-word" class="mb-8 bg-white dark:bg-gray-800 p-4 rounded-lg shadow-md hover:scale-105 transition-all duration-500 ease-in-out">
              <h2 class="text-xl font-semibold mb-2" data-i18n="word-of-day">📖 Word of the Day</h2>
@@ -1034,14 +1047,14 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 // Initialize
-const historyBtn = document.getElementById('historyBtn');
+const historyButton = document.getElementById('historyButton'); // Correct ID
 const historyBox = document.getElementById('historyBox');
 const historyLog = document.getElementById('historyLog');
 
 // Load History
 function loadUserHistory() {
   const userHistory = JSON.parse(localStorage.getItem('userHistory')) || [];
-  historyLog.innerHTML = '';
+  historyLog.innerHTML = ''; // Clear previous
 
   userHistory.forEach(item => {
     const p = document.createElement('p');
@@ -1059,16 +1072,16 @@ function saveUserEntry(entry) {
 
   // Limit to 15 entries
   if (userHistory.length > 15) {
-    userHistory.shift(); // remove oldest
+    userHistory.shift(); // Remove oldest if more than 15
   }
 
-  // Save back to localStorage
+  // Save back
   localStorage.setItem('userHistory', JSON.stringify(userHistory));
 }
 
-// Click to open/close History
-historyBtn.addEventListener('click', () => {
-  if (historyBox.style.display === 'none') {
+// Click to open/close History Box
+historyButton.addEventListener('click', () => {
+  if (historyBox.style.display === 'none' || historyBox.style.display === '') {
     loadUserHistory();
     historyBox.style.display = 'block';
   } else {
@@ -1077,29 +1090,29 @@ historyBtn.addEventListener('click', () => {
 });
 
 // ==========================
-// Now ready to save real data!
+// Saving Real User Actions
 // ==========================
 
-// 1. Save Language Selection
+// Save Language Selection
 function userSelectedLanguage(language) {
   const emojis = {
     "French": "🇫🇷",
-    "English": "EN",
-    "Arabic": "AR",
+    "English": "🇬🇧",
+    "Arabic": "🇸🇦",
     "Spanish": "🇪🇸"
   };
   saveUserEntry(`🈯 Selected Language: ${language} ${emojis[language] || ''}`);
 }
 
-// 2. Save  Proficiency Quiz Score (ex: 🌸 Red Flower or hat🎓)
+// Save Proficiency Quiz Result
 function saveProfQuizResult(result) {
-  saveUserEntry(`🧠 Proficiency Quiz Score: ${result}`);
+  saveUserEntry(`🧠 Proficiency Quiz Result: ${result}`);
 }
 
-// 3. Save Vocabulary Game Score
+// Save Vocabulary Game Score
 function saveVocabGameResult(score) {
   saveUserEntry(`📘 Vocabulary Game Score: ${score}`);
 }
-</script>
+ </script>
  </body>
  </html>
