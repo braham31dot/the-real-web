@@ -73,28 +73,30 @@
  </body>
     
      <main class="p-4 md:p-6 max-w-3xl mx-auto">
-      
-                  <!-- Modal (Pop-up Box) -->
-      <button id="openModal">View Tutoring Summary</button>
-   <div class="modal" id="servicesModal">
-     <div class="modal-content">
-       <span class="close" id="closeModal">&times;</span>
-       <h2>EN/FR - Private English Tutoring Guide Summary</h2>
-       <ul>
-         <li><strong>Introduction & learning goals</strong> / Introduction & objectifs d'apprentissage</li>
-         <li><strong>English basics:</strong> alphabet, greetings, simple sentences / Bases de l'anglais : alphabet, salutations, phrases simples</li>
-         <li><strong>Grammar:</strong> nouns, verbs, adjectives, sentence structure / Grammaire : noms, verbes, adjectifs, structure des phrases</li>
-         <li><strong>Speaking & pronunciation:</strong> phonetics, roleplays / Expression orale & prononciation : phonétique, jeux de rôle</li>
-         <li><strong>Vocabulary building:</strong> daily topics, idioms / Vocabulaire : vie quotidienne, expressions idiomatiques</li>
-         <li><strong>Writing:</strong> emails, essays, creative texts / Écriture : e-mails, essais, rédaction créative</li>
-         <li><strong>Reading:</strong> comprehension strategies, summaries / Lecture : stratégies de compréhension, résumés</li>
-         <li><strong>Listening:</strong> audio practice, accents / Écoute : audios, reconnaissance des accents</li>
-         <li><strong>Advanced communication & fluency</strong> / Communication avancée & fluidité</li>
-         <li><strong>Exam prep, culture, review plans</strong> / Préparation aux examens, culture, plans de révision</li>
-       </ul>
-     </div>
-   </div>
- </section>
+      <!-- Button to open the modal -->
+<button id="openModal" class="cta-button">View Tutoring Summary</button>
+
+<!-- Modal (Pop-up Box) -->
+<div class="modal" id="servicesModal">
+  <div class="modal-content">
+    <span class="close" id="closeModal">&times;</span>
+    <h2>EN/FR - Private English Tutoring Guide Summary</h2>
+    <ul>
+      <li><strong>Introduction & learning goals</strong> / Introduction & objectifs d'apprentissage</li>
+      <li><strong>English basics:</strong> alphabet, greetings, simple sentences / Bases de l'anglais : alphabet, salutations, phrases simples</li>
+      <li><strong>Grammar:</strong> nouns, verbs, adjectives, sentence structure / Grammaire : noms, verbes, adjectifs, structure des phrases</li>
+      <li><strong>Speaking & pronunciation:</strong> phonetics, roleplays / Expression orale & prononciation : phonétique, jeux de rôle</li>
+      <li><strong>Vocabulary building:</strong> daily topics, idioms / Vocabulaire : vie quotidienne, expressions idiomatiques</li>
+      <li><strong>Writing:</strong> emails, essays, creative texts / Écriture : e-mails, essais, rédaction créative</li>
+      <li><strong>Reading:</strong> comprehension strategies, summaries / Lecture : stratégies de compréhension, résumés</li>
+      <li><strong>Listening:</strong> audio practice, accents / Écoute : audios, reconnaissance des accents</li>
+      <li><strong>Advanced communication & fluency</strong> / Communication avancée & fluidité</li>
+      <li><strong>Exam prep, culture, review plans</strong> / Préparation aux examens, culture, plans de révision</li>
+    </ul>
+  </div>
+</div>
+
+<!-- JavaScript -->
 <script>
 document.addEventListener('DOMContentLoaded', () => {
   const modal = document.getElementById("servicesModal");
@@ -113,7 +115,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // Close modal when clicking outside the modal content
   window.addEventListener("click", (event) => {
     if (event.target === modal) {
       modal.style.display = "none";
@@ -122,39 +123,37 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 </script>
 
- 
- <style>
-   /* General styling for the tutoring summary */
-   .cta-button {
-     display: inline-block;
-     padding: 0.8rem 2rem;
-     background-color: #ff88a0;
-     color: white;
-     border: none;
-     border-radius: 30px;
-     font-size: 1.2rem;
-     text-transform: uppercase;
-     cursor: pointer;
-     font-family: 'Segoe UI', sans-serif;
-     transition: all 0.3s ease;
-   }
- 
-   .cta-button:hover {
-     background-color: #f16a6a;
-     transform: scale(1.05);
-   }
- 
-   .cta-button:active {
-     background-color: #d24c5a;
-   }
- 
-   .cta-button:focus {
-     outline: none;
-   }
- 
-  <style>
+<!-- Styles -->
+<style>
+.cta-button {
+  display: inline-block;
+  padding: 0.8rem 2rem;
+  background-color: #ff88a0;
+  color: white;
+  border: none;
+  border-radius: 30px;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  cursor: pointer;
+  font-family: 'Segoe UI', sans-serif;
+  transition: all 0.3s ease;
+}
+
+.cta-button:hover {
+  background-color: #f16a6a;
+  transform: scale(1.05);
+}
+
+.cta-button:active {
+  background-color: #d24c5a;
+}
+
+.cta-button:focus {
+  outline: none;
+}
+
 .modal {
-  display: none; /* Hidden by default */
+  display: none;
   position: fixed;
   z-index: 1000;
   left: 0;
@@ -162,7 +161,7 @@ document.addEventListener('DOMContentLoaded', () => {
   width: 100%;
   height: 100%;
   overflow: auto;
-  background-color: rgba(0,0,0,0.5); /* Black w/ opacity */
+  background-color: rgba(0,0,0,0.5);
 }
 
 .modal-content {
@@ -186,30 +185,30 @@ document.addEventListener('DOMContentLoaded', () => {
 .close:hover {
   color: red;
 }
+
+.modal-content h2 {
+  font-size: 1.7rem;
+  margin-bottom: 1rem;
+  text-align: center;
+  color: #f16a6a;
+  font-weight: bold;
+  font-family: 'Comic Sans MS', cursive;
+}
+
+.modal-content ul {
+  list-style-type: square;
+  padding-left: 2rem;
+  color: #3a3a3a;
+}
+
+.modal-content ul li {
+  margin-bottom: 1rem;
+  line-height: 1.7;
+  font-family: 'Comic Sans MS', cursive;
+}
 </style>
-<style>
-   /* Modal text and list styling */
-   .modal-content h2 {
-     font-size: 1.7rem;
-     margin-bottom: 1rem;
-     text-align: center;
-     color: #f16a6a;
-     font-weight: bold;
-     font-family: 'Comic Sans MS', cursive;
-   }
- 
-   .modal-content ul {
-     list-style-type: square;
-     padding-left: 2rem;
-     color: #3a3a3a;
-   }
- 
-   .modal-content ul li {
-     margin-bottom: 1rem;
-     line-height: 1.7;
-     font-family: 'Comic Sans MS', cursive;
-   }
- 
+
+ <style>
    /* Mobile responsiveness */
    @media (max-width: 600px) {
      .modal-content {
