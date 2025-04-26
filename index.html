@@ -71,8 +71,8 @@
          }
      </style>
  </body>
- 
     
+     <main class="p-4 md:p-6 max-w-3xl mx-auto">
  <script>
    // Get elements
    const servicesButton = document.getElementById('servicesButton');
@@ -308,6 +308,27 @@ button:hover {
              <p id="word" class="text-lg font-bold text-blue-600 dark:text-blue-300"></p>
              <p id="definition" class="text-sm italic text-gray-600 dark:text-gray-400"></p>
          </section>
+
+                  <!-- Modal (Pop-up Box) -->
+   <div class="modal" id="servicesModal">
+     <div class="modal-content">
+       <span class="close" id="closeModal">&times;</span>
+       <h2>EN/FR - Private English Tutoring Guide Summary</h2>
+       <ul>
+         <li><strong>Introduction & learning goals</strong> / Introduction & objectifs d'apprentissage</li>
+         <li><strong>English basics:</strong> alphabet, greetings, simple sentences / Bases de l'anglais : alphabet, salutations, phrases simples</li>
+         <li><strong>Grammar:</strong> nouns, verbs, adjectives, sentence structure / Grammaire : noms, verbes, adjectifs, structure des phrases</li>
+         <li><strong>Speaking & pronunciation:</strong> phonetics, roleplays / Expression orale & prononciation : phonétique, jeux de rôle</li>
+         <li><strong>Vocabulary building:</strong> daily topics, idioms / Vocabulaire : vie quotidienne, expressions idiomatiques</li>
+         <li><strong>Writing:</strong> emails, essays, creative texts / Écriture : e-mails, essais, rédaction créative</li>
+         <li><strong>Reading:</strong> comprehension strategies, summaries / Lecture : stratégies de compréhension, résumés</li>
+         <li><strong>Listening:</strong> audio practice, accents / Écoute : audios, reconnaissance des accents</li>
+         <li><strong>Advanced communication & fluency</strong> / Communication avancée & fluidité</li>
+         <li><strong>Exam prep, culture, review plans</strong> / Préparation aux examens, culture, plans de révision</li>
+       </ul>
+     </div>
+   </div>
+ </section>
  
          <section id="placement-quiz" class="mb-12 bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md hover:scale-105 transition-all duration-500 ease-in-out">
              <h2 class="text-2xl font-bold mb-4">🧠 Proficiency Quiz</h2>
@@ -427,28 +448,7 @@ button:hover {
              </form>
          </section>
 
-              
-     <main class="p-4 md:p-6 max-w-3xl mx-auto">
-               <!-- Modal (Pop-up Box) -->
-   <div class="modal" id="servicesModal">
-     <div class="modal-content">
-       <span class="close" id="closeModal">&times;</span>
-       <h2>EN/FR - Private English Tutoring Guide Summary</h2>
-       <ul>
-         <li><strong>Introduction & learning goals</strong> / Introduction & objectifs d'apprentissage</li>
-         <li><strong>English basics:</strong> alphabet, greetings, simple sentences / Bases de l'anglais : alphabet, salutations, phrases simples</li>
-         <li><strong>Grammar:</strong> nouns, verbs, adjectives, sentence structure / Grammaire : noms, verbes, adjectifs, structure des phrases</li>
-         <li><strong>Speaking & pronunciation:</strong> phonetics, roleplays / Expression orale & prononciation : phonétique, jeux de rôle</li>
-         <li><strong>Vocabulary building:</strong> daily topics, idioms / Vocabulaire : vie quotidienne, expressions idiomatiques</li>
-         <li><strong>Writing:</strong> emails, essays, creative texts / Écriture : e-mails, essais, rédaction créative</li>
-         <li><strong>Reading:</strong> comprehension strategies, summaries / Lecture : stratégies de compréhension, résumés</li>
-         <li><strong>Listening:</strong> audio practice, accents / Écoute : audios, reconnaissance des accents</li>
-         <li><strong>Advanced communication & fluency</strong> / Communication avancée & fluidité</li>
-         <li><strong>Exam prep, culture, review plans</strong> / Préparation aux examens, culture, plans de révision</li>
-       </ul>
-     </div>
-   </div>
- </section>
+             
  
          <section class="mb-12 text-sm bg-white dark:bg-gray-800 p-4 rounded-lg">
              <h2 class="text-xl font-semibold mb-2" data-i18n="privacy">🔐 Privacy Policy</h2>
