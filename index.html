@@ -314,7 +314,19 @@ button:hover {
     margin-bottom: 30px;
   }
 }
-  /* Hide all weekly divs by default */
+
+/* Media query for even larger desktop screens */
+@media (min-width: 992px) {
+  #wordDisplay {
+    font-size: 3rem; /* Even larger text on desktops */
+    max-width: 700px;
+  }
+
+  h1 {
+    font-size: 5rem;
+  }
+}
+/* Hide all weekly divs by default */
 .questionnaire-week {
     display: none;
     margin-bottom: 20px;
@@ -404,19 +416,6 @@ button.submit-button:disabled {
      border-color: #bee5eb;
      display: block;
 }
-
-/* Media query for even larger desktop screens */
-@media (min-width: 992px) {
-  #wordDisplay {
-    font-size: 3rem; /* Even larger text on desktops */
-    max-width: 700px;
-  }
-
-  h1 {
-    font-size: 5rem;
-  }
-}
-
 
  </style>
      </section>
