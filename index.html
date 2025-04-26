@@ -337,86 +337,61 @@ button:hover {
              <p id="definition" class="text-sm italic text-gray-600 dark:text-gray-400"></p>
          </section>
       
- <section id="placement-quiz" class="mb-12 bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md hover:scale-105 transition-all duration-500 ease-in-out">
-  <h2 class="text-2xl font-bold mb-4">🧠 Proficiency Quiz</h2>
-  <form id="quiz-form" class="space-y-4">
-    <div id="p.1">
-      <p>1. Choose the correct sentence:</p>
-      <label class="block"><input type="radio" name="q1" value="a"> She go to school.</label>
-      <label class="block"><input type="radio" name="q1" value="b"> She goes to school.</label>
-    </div>
+ <title>Weekly Questionnaire ✨</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/@nhost/nhost-js@latest/dist/index.umd.min.js"></script>
 
-    <div id="p.2">
-      <p>2. What is the past tense of 'eat'?</p>
-      <label class="block"><input type="radio" name="q2" value="a"> eated</label>
-      <label class="block"><input type="radio" name="q2" value="b"> ate</label>
-    </div>
+</head>
+<body>
+    <h1>Weekly Check-in 📝</h1>
+    <div id="message-area"></div> <div id="questionnaire-container">
+        <div class="p.1 questionnaire-week" id="week1" data-week-number="1">
+             <h2>📅 Week 1 Questions</h2>
+            <div class="question">
+                <label>Question 1.1: Rate your week (1=Bad, 5=Great)?</label><br>
+                <input type="radio" name="week1_q1" value="1" required> 1
+                <input type="radio" name="week1_q1" value="2"> 2
+                <input type="radio" name="week1_q1" value="3"> 3
+                <input type="radio" name="week1_q1" value="4"> 4
+                <input type="radio" name="week1_q1" value="5"> 5
+            </div>
+            <div class="question">
+                <label>Question 1.2: Did you meet your goals?</label><br>
+                <input type="radio" name="week1_q2" value="yes" required> Yes
+                <input type="radio" name="week1_q2" value="no"> No
+                <input type="radio" name="week1_q2" value="partially"> Partially
+            </div>
+            <div class="question">
+                 <label for="week1_comments">Comments:</label><br>
+                 <textarea id="week1_comments" name="comments" rows="4" cols="50" placeholder="Any thoughts?"></textarea>
+            </div>
+             <button type="button" class="submit-button">Submit Week 1 🚀</button>
+        </div>
 
-    <div id="p.3">
-      <p>3. Which is a question?</p>
-      <label class="block"><input type="radio" name="q3" value="a"> She is tired.</label>
-      <label class="block"><input type="radio" name="q3" value="b"> Is she tired?</label> 
-    </div>
+        <div class="p.1 questionnaire-week" id="week2" data-week-number="2">
+             <h2>✨ Week 2 Questions</h2>
+             <div class="question">
+                <label>Question 2.1: Rate your week (1=Bad, 5=Great)?</label><br>
+                <input type="radio" name="week2_q1" value="1" required> 1
+                <input type="radio" name="week2_q1" value="2"> 2
+                <input type="radio" name="week2_q1" value="3"> 3
+                <input type="radio" name="week2_q1" value="4"> 4
+                <input type="radio" name="week2_q1" value="5"> 5
+            </div>
+            <div class="question">
+                <label>Question 2.2: Any blockers this week?</label><br>
+                <input type="radio" name="week2_q2" value="yes" required> Yes
+                <input type="radio" name="week2_q2" value="no"> No
+            </div>
+            <div class="question">
+                 <label for="week2_comments">Comments:</label><br>
+                 <textarea id="week2_comments" name="comments" rows="4" cols="50" placeholder="Anything blocking you?"></textarea>
+            </div>
+             <button type="button" class="submit-button">Submit Week 2 ✨</button>
+        </div>
 
-    <div id="p.4">             
-      <p>4. Identify the adverb in the sentence: "He ran quickly down the street."</p>
-      <label class="block"><input type="radio" name="q4" value="a"> He</label>
-      <label class="block"><input type="radio" name="q4" value="b"> ran</label>
-      <label class="block"><input type="radio" name="q4" value="c"> quickly</label>
-      <label class="block"><input type="radio" name="q4" value="d"> street</label>
-    </div>
-
-    <div id="p.5">
-      <p>5. Choose the pair of words that are synonyms:</p>
-      <label class="block"><input type="radio" name="q5" value="a"> happy / sad</label>
-      <label class="block"><input type="radio" name="q5" value="b"> large / small</label>
-      <label class="block"><input type="radio" name="q5" value="c"> joyful / elated</label>
-      <label class="block"><input type="radio" name="q5" value="d"> hot / cold</label>
-    </div>
-
-    <div id="p.6">
-      <p>6. Which sentence uses the correct form of "there," "their," or "they're"?</p>
-      <label class="block"><input type="radio" name="q6" value="a"> There going to the park.</label>
-      <label class="block"><input type="radio" name="q6" value="b"> Their dog is very friendly.</label>
-      <label class="block"><input type="radio" name="q6" value="c"> The book is over their.</label>
-      <label class="block"><input type="radio" name="q6" value="d"> There favorite color is blue.</label>
-    </div>
-
-    <div id="p.7">
-      <p>7. What is the plural form of "cactus"?</p>
-      <label class="block"><input type="radio" name="q7" value="a"> cactuses</label>
-      <label class="block"><input type="radio" name="q7" value="b"> cacti</label>
-      <label class="block"><input type="radio" name="q7" value="c"> cactis</label>
-      <label class="block"><input type="radio" name="q7" value="d"> cacta</label>
-    </div>
-
-    <div id="p.8">
-      <p>8. Identify the preposition: "The cat jumped over the fence."</p>
-      <label class="block"><input type="radio" name="q8" value="a"> The</label>
-      <label class="block"><input type="radio" name="q8" value="b"> jumped</label>
-      <label class="block"><input type="radio" name="q8" value="c"> over</label>
-      <label class="block"><input type="radio" name="q8" value="d"> fence</label>
-    </div>
-
-    <div id="p.9">
-      <p>9. Choose the sentence with correct punctuation:</p>
-      <label class="block"><input type="radio" name="q9" value="a"> Let's eat grandma!</label>
-      <label class="block"><input type="radio" name="q9" value="b"> Let's eat, grandma!</label>
-      <label class="block"><input type="radio" name="q9" value="c"> Lets eat grandma.</label>
-      <label class="block"><input type="radio" name="q9" value="d"> Lets eat, grandma.</label>
-    </div>
-
-    <div id="p.10">
-      <p>10. Which of the following is a simile?</p>
-      <label class="block"><input type="radio" name="q10" value="a"> The wind whispered secrets.</label>
-      <label class="block"><input type="radio" name="q10" value="b"> He is a lion in battle.</label>
-      <label class="block"><input type="radio" name="q10" value="c"> She is as brave as a lion.</label>
-      <label class="block"><input type="radio" name="q10" value="d"> The rain was a curtain.</label>
-    </div>
-    
-    <button type="submit" class="mt-4 bg-blue-500 text-white p-2 rounded">Submit Quiz</button>
+        </div>
   </form>
-             <div id="quiz-result" class="mt-4 text-xl font-bold text-pink-600 dark:text-pink-300"></div>
          </section>
         
        <h1>🎓 Vocabulary Game 💡</h1>
@@ -604,123 +579,382 @@ button:hover {
  
          document.getElementById('word').textContent = words[userWordIndex].word;
          document.getElementById('definition').textContent = words[userWordIndex].definition;
-import { NhostClient } from '@nhost/nhost-js'; // Import Nhost SDK (if using npm/yarn)
+// --- Configuration ---
+// Replace with your actual Nhost details
+const NHOST_SUBDOMAIN = 'YOUR_NHOST_SUBDOMAIN'; // e.g., 'abcdefghijklmn'
+const NHOST_REGION = 'YOUR_NHOST_REGION';    // e.g., 'eu-central-1'
 
-document.addEventListener('DOMContentLoaded', () => {
-  displayWeeklyQuestion(); // Show correct weekly question
+// !!! IMPORTANT: Set the start date of Week 1 !!!
+// Format: YYYY-MM-DD (e.g., '2024-04-22' for Monday, April 22nd, 2024)
+const WEEK_1_START_DATE = '2025-04-21'; // <-- CHANGE THIS DATE
 
-  const quizForm = document.getElementById("quiz-form");
-  if (!quizForm) return;
+// --- Nhost Client Initialization ---
+let nhost;
+try {
+     // Use the correct constructor from the SDK (nhostJs namespace)
+    nhost = new nhostJs.NhostClient({
+        subdomain: tejidmxblscxgoicfvqk,
+        region: us-west-2
+    });
+     // Added checkmark emoji
+    console.log("✅ Nhost client initialized.");
+} catch (error) {
+     // Added cross mark emoji
+    console.error("❌ Error initializing Nhost client:", error);
+     // Added warning emoji
+    displayMessage("⚠️ Error connecting to backend service.", "error");
+}
 
-  quizForm.addEventListener("submit", async function (e) {
-    e.preventDefault();
 
-    let correctAnswers = {
-      q1: "b",
-      q2: "b",
-      q3: "b",
-      q4: "c",
-      q5: "c",
-      q6: "b",
-      q7: "b",
-      q8: "c",
-      q9: "b",
-      q10: "c",
-    };
+// --- Helper Functions ---
 
-    let score = 0;
-    let total = 0;
-    let userAnswers = {};
+/**
+ * Calculates the current week number based on a start date.
+ * @param {string} startDateString - The start date of week 1 in 'YYYY-MM-DD' format.
+ * @returns {number | null} The current week number (starting from 1) or null if invalid date/error.
+ */
+function getCurrentWeekNumber(startDateString) {
+    try {
+        const startDate = new Date(startDateString + 'T00:00:00'); // Use local timezone start of day
+        // Use current date from system clock (local timezone)
+        // The current date is Saturday, April 26, 2025 at 12:43:53 AM EDT
+        const today = new Date('2025-04-26T00:43:53');
 
-    Object.keys(correctAnswers).forEach(q => {
-      const selected = quizForm.querySelector(`input[name="${q}"]:checked`);
-      const parentDiv = selected ? selected.closest("label") : null;
-      if (selected && parentDiv) {
-        userAnswers[q] = selected.value;
-        total++;
-        if (selected.value === correctAnswers[q]) {
-          score++;
-          parentDiv.innerHTML += " 🌸"; // Green flower for correct
-          parentDiv.style.color = "green";
-        } else {
-          parentDiv.innerHTML += " 🌹"; // Red flower for wrong
-          parentDiv.style.color = "red";
+
+        if (isNaN(startDate.getTime())) {
+            console.error("❌ Invalid start date provided:", startDateString);
+            return null;
         }
-      }
+
+        // Calculate difference in milliseconds
+        const diffTime = today - startDate;
+
+        // If today is before the start date, it's not time yet
+        if (diffTime < 0) {
+            return 0; // Indicate period hasn't started
+        }
+
+        // Calculate difference in days (rounding down)
+        const diffDays = Math.floor(diffTime / (1000 * 60 * 60 * 24));
+
+        // Calculate week number (integer division, adding 1 because weeks are 1-indexed)
+        const weekNumber = Math.floor(diffDays / 7) + 1;
+
+        return weekNumber;
+
+    } catch (e) {
+         // Added cross mark emoji
+        console.error("❌ Error calculating week number:", e);
+        return null;
+    }
+}
+
+/**
+ * Displays a message to the user in the message area.
+ * @param {string} text - The message text.
+ * @param {'success' | 'error' | 'info'} type - The type of message.
+ */
+function displayMessage(text, type) {
+    const messageArea = document.getElementById('message-area');
+    if (messageArea) {
+        let emoji = '';
+        switch (type) {
+            case 'success':
+                 // Added party popper emoji
+                emoji = '🎉 ';
+                break;
+            case 'error':
+                 // Added sad but relieved face emoji
+                emoji = '😥 ';
+                break;
+            case 'info':
+                  // Added thinking face emoji
+                 emoji = '🤔 ';
+                 break;
+        }
+        messageArea.textContent = emoji + text;
+        // Make sure className is only the type (remove previous types)
+        messageArea.className = '';
+        if (type) {
+            messageArea.classList.add(type);
+        }
+
+        // Control visibility based on text content
+        if (text && text.trim() !== "") {
+            messageArea.style.display = 'block';
+        } else {
+            messageArea.style.display = 'none';
+        }
+    } else {
+        // Fallback if message area doesn't exist
+        alert(`${type.toUpperCase()}: ${text}`);
+    }
+}
+
+
+/**
+ * Handles the submission process for a specific week.
+ * @param {Event} event - The click event object.
+ */
+async function handleSubmit(event) {
+    const button = event.target;
+    // Disable button immediately
+    button.disabled = true;
+     // Added hourglass emoji
+    button.textContent = 'Submitting... ⏳';
+    displayMessage("", ""); // Clear previous messages
+
+    const questionnaireDiv = button.closest('.questionnaire-week');
+    if (!questionnaireDiv) {
+         // Added cross mark emoji
+        console.error("❌ Could not find parent questionnaire div.");
+         // Added warning emoji
+        displayMessage("⚠️ An error occurred. Could not identify the week.", "error");
+        button.disabled = false; // Re-enable button on fundamental error
+        // Try to restore original text if possible
+        const originalEmoji = button.dataset.originalEmoji || '🚀'; // Fallback emoji
+        button.textContent = `Submit Week ? ${originalEmoji}`;
+        return;
+    }
+
+    const weekNumber = parseInt(questionnaireDiv.dataset.weekNumber, 10);
+    const weekId = questionnaireDiv.id; // e.g., "week1"
+    // Store original emoji from button text if needed, or set dynamically later
+    const originalButtonEmoji = button.textContent.split(' ').pop();
+    const originalButtonText = `Submit Week ${weekNumber} ${originalButtonEmoji}`;
+
+    // --- 1. Gather Data ---
+    const formData = {};
+    const answers = {};
+    let allRequiredAnswered = true;
+
+    // Get radio button answers
+    const radioGroups = {};
+    questionnaireDiv.querySelectorAll('input[type="radio"]').forEach(radio => {
+        const groupName = radio.name;
+        if (!radioGroups[groupName]) {
+            // Initialize group info, checking the required status of the *first* radio in group
+            radioGroups[groupName] = { required: radio.required, answered: false };
+        }
+        if (radio.checked) {
+             answers[groupName] = radio.value;
+             radioGroups[groupName].answered = true; // Mark group as answered if any radio is checked
+        }
     });
 
-    const resultMessage = document.createElement("p");
-    resultMessage.className = "mt-4 font-bold";
-    if (score === total) {
-      resultMessage.textContent = `✨ Perfect! You're Advanced! 🎓 (${score}/${total})`;
-      resultMessage.style.color = "green";
-    } else if (score >= total / 2) {
-      resultMessage.textContent = `👍 Not bad! You're Intermediate 🌟 (${score}/${total})`;
-      resultMessage.style.color = "orange";
-    } else {
-      resultMessage.textContent = `😢 Keep learning! You're a Beginner 📘 (${score}/${total})`;
-      resultMessage.style.color = "red";
+    // Check if all *required* radio groups were answered
+    for (const groupName in radioGroups) {
+        if (radioGroups[groupName].required && !radioGroups[groupName].answered) {
+            allRequiredAnswered = false;
+             // Added warning emoji
+            console.warn(`⚠️ Required question not answered: ${groupName}`);
+            break; // Exit loop early
+        }
     }
-    quizForm.appendChild(resultMessage);
 
-    // Save to localStorage
-    localStorage.setItem('quizAnswers', JSON.stringify(userAnswers));
+     if (!allRequiredAnswered) {
+         // Added warning emoji
+        displayMessage(`⚠️ Please answer all required questions for Week ${weekNumber}.`, "error");
+        button.disabled = false; // Re-enable button
+        button.textContent = originalButtonText;
+        return; // Stop submission
+    }
 
-    // Try to sync with Nhost (without authentication)
-    await saveToNhost(userAnswers); // Save to Nhost DB (no authentication needed)
-  });
+    // Get textarea comment
+    const commentsTextArea = questionnaireDiv.querySelector('textarea[name="comments"]');
+    const comments = commentsTextArea ? commentsTextArea.value.trim() : '';
+
+    formData.weekNumber = weekNumber;
+    formData.answers = answers; // Store structured answers
+    formData.comments = comments;
+
+     // Added thinking face emoji
+    console.log('🤔 Collected Data:', formData);
+
+    // --- 2. Save Locally ---
+    const storageKey = `questionnaire_data_week_${weekNumber}`;
+    try {
+        localStorage.setItem(storageKey, JSON.stringify(formData));
+         // Added floppy disk emoji
+        console.log(`💾 Data for ${weekId} saved to localStorage under key: ${storageKey}`);
+    } catch (error) {
+         // Added cross mark emoji
+        console.error(`❌ Error saving data to localStorage for ${weekId}:`, error);
+          // Added warning emoji
+        displayMessage("⚠️ Could not save data locally. Please try again.", "error");
+        button.disabled = false; // Re-enable button
+        button.textContent = originalButtonText;
+        return; // Stop if local save fails (optional, could still try to send)
+    }
+
+    // --- 3. Send to Nhost ---
+    if (!nhost) {
+          // Added cloud with slash emoji
+         displayMessage("☁️ Backend service connection not available. Data saved locally.", "info");
+          // Added floppy disk emoji to button text
+         button.textContent = 'Saved Locally 💾';
+         // Keep button disabled as it *was* saved locally
+         return;
+    }
+
+    // Define the GraphQL Mutation (ensure this matches your Nhost backend table/columns)
+    // Assumes table 'responses' with columns: 'week_number'(Int), 'answers'(jsonb), 'comments'(String)
+    const INSERT_RESPONSE_MUTATION = `
+        mutation InsertResponse($week_number: Int!, $answers: jsonb!, $comments: String) {
+          insert_responses_one(object: {week_number: $week_number, answers: $answers, comments: $comments}) {
+            id # Requesting the ID of the newly inserted row as confirmation
+          }
+        }
+    `;
+
+    const variables = {
+        week_number: formData.weekNumber,
+        answers: formData.answers, // Send the structured answers object
+        comments: formData.comments
+    };
+
+    try {
+          // Added cloud emoji
+        console.log("☁️ Sending data to Nhost:", variables);
+        const result = await nhost.graphql.request(INSERT_RESPONSE_MUTATION, variables);
+
+         // Added down arrow emoji
+        console.log('⬇️ Nhost response:', result);
+
+        // Check specifically for GraphQL errors returned in the response body
+        if (result.error) {
+             // Nhost client might wrap GraphQL errors under result.error
+            console.error('❌ GraphQL Errors:', result.error);
+            // Attempt to get a meaningful message
+            let errorMessage = 'Failed to submit to server.';
+            if (Array.isArray(result.error.graphQLErrors) && result.error.graphQLErrors.length > 0) {
+                errorMessage = result.error.graphQLErrors[0].message || errorMessage;
+            } else if (typeof result.error.message === 'string') {
+                 errorMessage = result.error.message;
+            }
+            throw new Error(errorMessage); // Throw a new error to be caught below
+        }
+
+        // Check if the expected data structure is present (adjust based on your mutation)
+        if (result.data && result.data.insert_responses_one && result.data.insert_responses_one.id) {
+             // Added checkmark emoji
+            console.log(`✅ Data for ${weekId} successfully sent to Nhost.`);
+            displayMessage(`Week ${weekNumber} submitted successfully!`, "success");
+              // Added checkmark emoji to button text
+            button.textContent = 'Submitted ✅';
+            // Keep button disabled after successful submission
+        } else {
+             // Handle cases where mutation might seem to succeed network-wise but returns unexpected data/null
+             console.error('❌ Nhost submission response did not contain expected data:', result.data);
+             throw new Error('Server response was incomplete or unexpected.');
+        }
+
+    } catch (error) { // Catch errors from the await request or the explicit throws above
+          // Added cross mark emoji
+        console.error(`❌ Error sending data to Nhost for ${weekId}:`, error);
+          // Added warning emoji
+        // Use error.message which might come from the Error objects thrown above
+        displayMessage(`😥 Failed to submit Week ${weekNumber}. Data saved locally. Error: ${error.message || 'Unknown server error'}`, "error");
+         // Added floppy disk emoji for button text
+        button.textContent = 'Submission Failed (Saved Locally 💾)';
+        // Keep disabled (as it's saved locally), or re-enable if you want retry
+        // button.disabled = false; // Optional: allow retry
+    }
+}
+
+
+// --- Initialization on Page Load ---
+document.addEventListener('DOMContentLoaded', () => {
+     // Added sparkle emoji
+    console.log("✨ DOM fully loaded and parsed.");
+
+    const container = document.getElementById('questionnaire-container');
+    if (!container) {
+         // Added cross mark emoji
+        console.error("❌ Questionnaire container not found!");
+        return;
+    }
+
+    // --- Show Current Week ---
+    const currentWeek = getCurrentWeekNumber(WEEK_1_START_DATE);
+      // Added calendar emoji
+    console.log("📅 Current calculated week:", currentWeek);
+
+    if (currentWeek === null) {
+          // Added cross mark emoji
+         displayMessage("❌ Could not determine the current week due to invalid start date configuration.", "error");
+         return;
+    } else if (currentWeek <= 0) {
+          // Added sleeping face emoji
+         displayMessage("😴 The questionnaire period has not started yet.", "info");
+         return;
+    }
+
+    const allWeeks = container.querySelectorAll('.questionnaire-week');
+    let weekToShowFound = false;
+    let maxAvailableWeek = 0;
+
+    allWeeks.forEach(weekDiv => {
+        const weekNum = parseInt(weekDiv.dataset.weekNumber, 10);
+        if (!isNaN(weekNum)) {
+            maxAvailableWeek = Math.max(maxAvailableWeek, weekNum); // Track the highest week number present
+            if (weekNum === currentWeek) {
+                weekDiv.style.display = 'block'; // Show the current week
+                weekToShowFound = true;
+                console.log(`✅ Displaying week: ${weekNum}`);
+            } else {
+                weekDiv.style.display = 'none'; // Ensure others are hidden
+            }
+        }
+    });
+
+    if (!weekToShowFound && currentWeek > 0) {
+         // Check if currentWeek exceeds the number of available week divs
+         if (currentWeek > maxAvailableWeek && maxAvailableWeek > 0) {
+               // Added checkered flag emoji
+              displayMessage(`🏁 The questionnaire period seems to have ended (Current: Week ${currentWeek}, Last Available: Week ${maxAvailableWeek}).`, "info");
+         } else {
+             // Added warning emoji
+            displayMessage(`🤔 Questionnaire for Week ${currentWeek} is not available in the HTML structure.`, "info");
+         }
+          // Added magnifying glass emoji
+         console.log(`🔍 Week ${currentWeek} div not found or not applicable.`);
+    }
+
+
+    // --- Attach Event Listener using Event Delegation ---
+    container.addEventListener('click', (event) => {
+        // Check if the clicked element is a submit button inside the container
+        if (event.target.matches('button.submit-button')) {
+             // Added speech bubble emoji
+            console.log(`💬 Submit button clicked for week: ${event.target.closest('.questionnaire-week')?.id}`);
+            handleSubmit(event); // Call the async handler
+        }
+    });
+
+     // --- Check local storage for previously submitted data ---
+     if (weekToShowFound) {
+         const currentWeekDiv = document.getElementById(`week${currentWeek}`);
+         const currentButton = currentWeekDiv?.querySelector('.submit-button');
+         const storageKey = `questionnaire_data_week_${currentWeek}`;
+         const locallySavedData = localStorage.getItem(storageKey);
+
+         if(locallySavedData && currentButton){
+              // Added floppy disk emoji
+             console.log(`💾 Previously saved data found for week ${currentWeek} in local storage.`);
+             // Decide what to do: maybe indicate it's saved, potentially disable button
+             // Simple approach: Assume if it's saved locally, it *might* have failed sending.
+             // Let's add an 'info' message but keep button enabled unless definitely submitted.
+             // displayMessage(`🤔 Found locally saved data for Week ${currentWeek}. You can review or submit again if needed.`, "info");
+
+             // More aggressive: Assume saved = submitted (risky if send failed)
+              // currentButton.disabled = true;
+              // currentButton.textContent = 'Already Submitted ✅';
+              // displayMessage(`✅ Week ${currentWeek} appears to have been submitted previously.`, "success");
+         }
+     }
+
 });
-
-// Function to display weekly question (show only one per week)
-function displayWeeklyQuestion() {
-  const today = new Date();
-  const customStartDate = new Date(2025, 3, 26); // Start date: April 26, 2025 (current date)
-  const daysSinceStart = Math.floor((today - customStartDate) / (1000 * 60 * 60 * 24));
-  const currentWeek = Math.max(1, Math.ceil((daysSinceStart + 1) / 7)); // Ensure it's never below week 1
-
-  // Reset to 1 after 10 weeks (to match the number of questions)
-  const questionWeek = currentWeek > 10 ? 1 : currentWeek;
-
-  const currentId = `p.${questionWeek}`; // Get current week's ID
-
-  // Hide all questions
-  document.querySelectorAll("[id^='p.']").forEach((el) => {
-    el.style.display = 'none';
-  });
-
-  // Display the current week's question
-  const currentQuestionDiv = document.getElementById(currentId);
-  if (currentQuestionDiv) {
-    currentQuestionDiv.style.display = 'block';
-  } else {
-    console.error(`Question div with ID '${currentId}' not found.`);
-  }
-}
-
-// Function to save data to Nhost (no authentication needed)
-async function saveToNhost(quizData) {
-  const nhost = new NhostClient({
-    subdomain: 'tejidmxblscxgoicfvqk', // Replace with your Nhost subdomain
-    region: 'us-west-2', // Replace with your Nhost region (e.g., 'eu-west-1')
-  });
-
-  const { error, data } = await nhost.graphql.request(`
-    mutation InsertResult($data: jsonb!) {
-      insert_quiz_results(objects: { data: $data }) {
-        affected_rows
-      }
-    }
-  `, {
-    data: quizData
-  });
-
-  if (error) {
-    console.error("Nhost error:", error);
-  } else {
-    console.log("Nhost sync success:", data);
-  }
-}
-
            
     const vocabularyWords = [
       "apple", "ball", "cat", "dog", "egg", "fish", "goat", "hat", "ice", "jam",
